@@ -13,7 +13,7 @@ import javax.persistence.NamedQuery;
 import com.ceiba.domain.enumeration.VehicleTypeEnum;
 
 @Entity(name = "ParkingRecord")
-@NamedQuery(name = "ParkingRecord.countParkingBusyByVehicleType", query = "SELECT count(parkingRecord.id) from ParkingRecord parkingRecord where parkingRecord.vehicleType = :vehicleType and parkingRecord.parkingBusy=true")
+@NamedQuery(name = "ParkingRecord.countBusyParkingByVehicleType", query = "SELECT count(parkingRecord.id) from ParkingRecord parkingRecord where parkingRecord.vehicleType = :vehicleType and parkingRecord.parkingBusy=true")
 public class ParkingRecordEntity {
 
 	@Id
