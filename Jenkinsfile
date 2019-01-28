@@ -34,6 +34,7 @@ pipeline {
         stage('Unit Tests') {
             steps {
                 echo "------------>Unit Tests<------------"
+                sh 'gradle --b ./build.gradle test'
             }
         }
         stage('Integration Tests') {
@@ -46,14 +47,15 @@ pipeline {
                 echo '------------>Análisis de código estático<------------'
                 withSonarQubeEnv('Sonar') {
                     sh "${tool name: 'SonarScanner',
-                    type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar - scanner
-                    -Dproject.settings = sonar - project.properties"
+                    type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
             }
         }
     }
     stage('Build') {
         steps {
             echo "------------>Build<------------"
+            //Construir sin tarea test que se ejecutó previamente 
+            sh 'gradle --b ./build.gradle build -x test' 
         }
     }
 }
@@ -63,9 +65,13 @@ post {
     }
     success {
         echo 'This will run only if successful'
+        junit '**/build/test-results/test/*.xml'
     }
     failure {
         echo 'This will run only if failed'
+        mail (to: 'nelson.laverde@ceiba.com.co',subject: Failed 
+              Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong
+              with ${env.BUILD_URL}") 
     }
     unstable {
         echo 'This will run only if the run was marked as unstable'
