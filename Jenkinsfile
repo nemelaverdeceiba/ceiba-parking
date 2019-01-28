@@ -46,8 +46,7 @@ pipeline {
             steps {
                 echo '------------>Análisis de código estático<------------'
                 withSonarQubeEnv('Sonar') {
-                    sh "${tool name: 'SonarScanner',
-                    type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
+                    sh "${tool name: 'SonarScanner',type: 'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner"
             }
         }
     }
@@ -70,8 +69,7 @@ post {
     failure {
         echo 'This will run only if failed'
         mail (to: 'nelson.laverde@ceiba.com.co',subject: Failed 
-              Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong
-              with ${env.BUILD_URL}") 
+              Pipeline:${currentBuild.fullDisplayName}",body: "Something is wrong with ${env.BUILD_URL}") 
     }
     unstable {
         echo 'This will run only if the run was marked as unstable'
