@@ -1,5 +1,6 @@
 package com.ceiba.persistence.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -13,8 +14,9 @@ import javax.persistence.NamedQuery;
 import com.ceiba.domain.enumeration.VehicleTypeEnum;
 
 @Entity(name = "ParkingRecord")
-@NamedQuery(name = "ParkingRecord.countBusyParkingByVehicleType", query = "SELECT count(parkingRecord.id) from ParkingRecord parkingRecord where parkingRecord.vehicleType = :vehicleType and parkingRecord.parkingBusy=true")
-public class ParkingRecordEntity {
+@NamedQueries(value = {
+		@NamedQuery(name = "ParkingRecord.countBusyParkingByVehicleType", query = "SELECT count(parkingRecord.id) from ParkingRecord parkingRecord where parkingRecord.vehicleType = :vehicleType and parkingRecord.parkingBusy=true") })
+public class ParkingRecordEntity implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
