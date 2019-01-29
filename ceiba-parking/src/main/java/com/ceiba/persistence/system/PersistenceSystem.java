@@ -17,11 +17,11 @@ public class SistemaDePersistencia {
 		return new RepositoryParkingRecordPersistence(entityManager);
 	}
 
-	public void iniciar() {
+	public void begin() {
 		entityManager.getTransaction().begin();
 	}
 
-	public void terminar() {
+	public void finalize() {
 		entityManager.getTransaction().commit();
 	}
 }
