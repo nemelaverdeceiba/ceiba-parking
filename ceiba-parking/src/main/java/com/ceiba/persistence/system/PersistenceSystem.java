@@ -3,6 +3,7 @@ package com.ceiba.persistence.system;
 import javax.persistence.EntityManager;
 
 import com.ceiba.persistence.conexion.ConexionJPA;
+import com.sun.corba.se.spi.activation.RepositoryOperations;
 
 public class SistemaDePersistencia {
 
@@ -12,14 +13,9 @@ public class SistemaDePersistencia {
 		this.entityManager = new ConexionJPA().createEntityManager();
 	}
 
-	/*
-	 * public RepositorioProducto obtenerRepositorioProductos() { return new
-	 * RepositorioProductoPersistente(entityManager); }
-	 * 
-	 * public RepositorioGarantiaExtendida obtenerRepositorioGarantia() { return new
-	 * RepositorioGarantiaPersistente(entityManager,
-	 * this.obtenerRepositorioProductos()); }
-	 */
+	public RepositoryParkingRecord getParkingRecordRepository() {
+		return new RepositoryParkingRecordPersistence(entityManager);
+	}
 
 	public void iniciar() {
 		entityManager.getTransaction().begin();

@@ -4,7 +4,7 @@ public enum VehicleTypeEnum {
 
 	CAR("Car"), MOTORBYKE("Motorbyke");
 
-	private String type;
+	private final String type;
 
 	private VehicleTypeEnum(String vehicleType) {
 		this.type = vehicleType;
