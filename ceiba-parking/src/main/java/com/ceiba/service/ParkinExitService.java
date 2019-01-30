@@ -28,6 +28,15 @@ public class ParkinExitService implements IParkinExitService {
 	 * @date Jan 29, 2019
 	 * @param parkingRecordRepository
 	 */
+	public ParkinExitService() {
+		super();
+	}
+
+	/**
+	 * @author nelson.laverde
+	 * @date Jan 30, 2019
+	 * @param parkingRecordRepository
+	 */
 	public ParkinExitService(ParkingRecordRepository parkingRecordRepository) {
 		super();
 		this.parkingRecordRepository = parkingRecordRepository;
