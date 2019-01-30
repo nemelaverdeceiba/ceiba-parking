@@ -34,7 +34,8 @@ pipeline {
         stage('Unit Tests') {
             steps {
                 echo "------------>Unit Tests<------------"
-                sh 'gradle --b ./build.gradle test'
+                //sh 'gradle --b ./build.gradle test'
+                 sh 'gradle --b  ceiba-parking/build.gradle test'
             }
         }
         stage('Integration Tests') {
@@ -54,7 +55,7 @@ pipeline {
         steps {
             echo "------------>Build<------------"
             //Construir sin tarea test que se ejecutó previamente 
-            sh 'gradle --b ./build.gradle build -x test' 
+            sh 'gradle --b ./build.gradle build -x test'            
         }
     }
 }
