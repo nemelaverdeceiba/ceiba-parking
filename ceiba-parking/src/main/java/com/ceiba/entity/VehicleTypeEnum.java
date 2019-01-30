@@ -1,5 +1,11 @@
-package com.ceiba.domain.enumeration;
+package com.ceiba.entity;
 
+/**
+ * 
+ * @author nelson.laverde
+ * @date   Jan 29, 2019
+ *
+ */
 public enum VehicleTypeEnum {
 
 	CAR("Car"), MOTORBYKE("Motorbyke");
