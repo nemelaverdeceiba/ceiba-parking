@@ -26,6 +26,7 @@ import com.ceiba.repository.ParkingRecordRepository;
 import com.ceiba.repository.VehicleRepository;
 import com.ceiba.service.ParkingEntranceService;
 import com.ceiba.service.VehicleService;
+import com.ceiba.utilities.CalendarUtil;
 
 /**
  * Pruebas unitarias a funcionalidad de registro de entrada al parqueadero.
@@ -48,6 +49,9 @@ public class ParkingEntranceUnitTest {
 	 */
 	@Mock
 	private VehicleRepository vehicleRepository;
+
+	@Mock
+	private CalendarUtil calendarUtil;
 
 	/**
 	 * Inyeccion de mocks en el service de vehiculo.
@@ -141,8 +145,7 @@ public class ParkingEntranceUnitTest {
 	public void failedParkingByLicensePlateWithALetter() {
 
 		// Arrange
-
-/*		VehicleTestDataBuilder vehicleTestDataBuilder = new VehicleTestDataBuilder();
+		VehicleTestDataBuilder vehicleTestDataBuilder = new VehicleTestDataBuilder();
 		VehicleDomain vehicleDomain = vehicleTestDataBuilder.withLicensePlate("ABC123").build();
 
 		ParkingRecordTestDataBuilder parkingRecordTestDataBuilder = new ParkingRecordTestDataBuilder();
@@ -152,7 +155,7 @@ public class ParkingEntranceUnitTest {
 		Calendar tuesday = Calendar.getInstance();
 		tuesday.set(2019, 01, 29);
 
-		when(iParkingEntranceService.).thenReturn(tuesday);
+		when(calendarUtil.getCalendarInstance()).thenReturn(tuesday);
 
 		// Act
 		try {
@@ -164,7 +167,7 @@ public class ParkingEntranceUnitTest {
 
 			// Assert
 			assertEquals(NO_AVAILABLE_PARKING_BY_LICENSE_PLATE_LETTER_A, e.getMessage());
-		}*/
+		}
 
 	}
 
@@ -174,7 +177,30 @@ public class ParkingEntranceUnitTest {
 	 */
 	@Test
 	public void successParkingByLicensePlateWithALetter() {
+		// Arrange
+				VehicleTestDataBuilder vehicleTestDataBuilder = new VehicleTestDataBuilder();
+				VehicleDomain vehicleDomain = vehicleTestDataBuilder.withLicensePlate("ABC123").build();
 
+				ParkingRecordTestDataBuilder parkingRecordTestDataBuilder = new ParkingRecordTestDataBuilder();
+				ParkingRecordDomain parkingRecordDomain = parkingRecordTestDataBuilder.withVehicle(vehicleDomain).build();
+
+				// Martes 29 enero 2019.
+				Calendar tuesday = Calendar.getInstance();
+				tuesday.set(2019, 01, 29);
+
+				when(calendarUtil.getCalendarInstance()).thenReturn(tuesday);
+
+				// Act
+				try {
+					iParkingEntranceService.registerParkingEntry(parkingRecordDomain);
+
+					// Si no lanza excepcion falla fail();
+
+				} catch (AplicationException e) {
+
+					// Assert
+					assertEquals(NO_AVAILABLE_PARKING_BY_LICENSE_PLATE_LETTER_A, e.getMessage());
+				}
 	}
 
 	@Test

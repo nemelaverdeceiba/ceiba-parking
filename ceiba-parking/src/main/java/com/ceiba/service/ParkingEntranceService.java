@@ -16,6 +16,7 @@ import com.ceiba.exception.AplicationException;
 import com.ceiba.iservice.IParkingEntranceService;
 import com.ceiba.iservice.IVehicleService;
 import com.ceiba.repository.ParkingRecordRepository;
+import com.ceiba.utilities.CalendarUtil;
 
 /**
  * Servicio para la funcionalidad de registrar entrada de vehiculo al
@@ -39,6 +40,9 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 */
 	@Autowired
 	private IVehicleService vehicleService;
+
+	@Autowired
+	private CalendarUtil calendarUtil;
 
 	/**
 	 * Excepción cuando no ahi disponibilidad de parqueaderos.
@@ -118,7 +122,8 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 */
 	private boolean isAvailableDayToParkByLetterA() {
 		boolean isAvailable = false;
-		Integer dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
+		Calendar calendar = calendarUtil.getCalendarInstance();
+		Integer dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
 		if (Arrays.asList(GeneralConstans.AVAILABLE_DAYS_TO_PARK_WITH_LETTER_A).contains(dayOfWeek)) {
 			isAvailable = true;
 		}
