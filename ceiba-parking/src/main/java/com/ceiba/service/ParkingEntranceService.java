@@ -14,6 +14,7 @@ import com.ceiba.entity.VehicleEntity;
 import com.ceiba.entity.VehicleTypeEnum;
 import com.ceiba.exception.AplicationException;
 import com.ceiba.iservice.IParkingEntranceService;
+import com.ceiba.iservice.IVehicleService;
 import com.ceiba.repository.ParkingRecordRepository;
 
 /**
@@ -37,7 +38,7 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 * Servicio de vehiculo.
 	 */
 	@Autowired
-	private VehicleService vehicleService;
+	private IVehicleService vehicleService;
 
 	/**
 	 * Excepción cuando no ahi disponibilidad de parqueaderos.
@@ -52,8 +53,12 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 * @author nelson.laverde
 	 * @date Jan 29, 2019
 	 * @param parkingRecordRepository
+	 * @param vehicleService
 	 */
-	public ParkingEntranceService(ParkingRecordRepository parkingRecordRepository) {
+	public ParkingEntranceService(ParkingRecordRepository parkingRecordRepository, IVehicleService vehicleService) {
+		super();
+		this.parkingRecordRepository = parkingRecordRepository;
+		this.vehicleService = vehicleService;
 	}
 
 	/**

@@ -1,6 +1,7 @@
 package com.ceiba.iservice;
 
 import com.ceiba.domain.VehicleDomain;
+import com.ceiba.entity.VehicleEntity;
 
 /**
  * 
@@ -18,7 +19,7 @@ public interface IVehicleService {
 	 * @param licensePlate
 	 * @return
 	 */
-	public VehicleDomain findVehicleByLicensePlate(String licensePlate);
+	public VehicleEntity findVehicleByLicensePlate(String licensePlate);
 
 	/**
 	 * Permite insertar el registro de vehiculo en la base de datos.
@@ -28,6 +29,6 @@ public interface IVehicleService {
 	 * @param vehicleDomain
 	 * @return
 	 */
-	public VehicleDomain insertVehicle(VehicleDomain vehicleDomain);
+	public VehicleEntity insertVehicle(VehicleDomain vehicleDomain);
 
 }

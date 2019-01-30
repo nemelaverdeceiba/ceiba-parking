@@ -7,39 +7,35 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ceiba.repository.ParkingRecordRepository;
 
-@RestController
+//@RestController
 public class ParkingRecordController {
-	private final ParkingRecordRepository repositoryParkingRecord;
-
-	@Autowired
-	public ParkingRecordController(final ParkingRecordRepository repositoryParkingRecord) {
-		this.repositoryParkingRecord = repositoryParkingRecord;
-	}
-
-	/*
-	 * @GetMapping("/hello/{lastName}") public String hello(@PathVariable final
-	 * String lastName) { List<ParkingRecord> parkingRecords =
-	 * repositoryParkingRecord.;
+	/**
+	 * private final ParkingRecordRepository repositoryParkingRecord;
 	 * 
-	 * return foundPerson.map(person -> String.format("Hello %s %s!",
-	 * person.getFirstName(), person.getLastName()))
-	 * .orElse(String.format("Who is this '%s' you're talking about?", lastName)); }
+	 * @Autowired public ParkingRecordController(final ParkingRecordRepository
+	 *            repositoryParkingRecord) { this.repositoryParkingRecord =
+	 *            repositoryParkingRecord; }
+	 * 
+	 * 
+	 * 			@GetMapping("/registerParkingRecordEntry/{lastName}") public void
+	 *            registerParkingRecordEntry(@PathVariable final String
+	 *            licensePlate,
+	 * @PathVariable final String engineCapacity, @PathVariable final String
+	 *               vehicleType) {
+	 * 
+	 *               }
+	 * 
+	 * 				@GetMapping("/registerParkingRecordExit/{licensePlate}") public
+	 *               void registerParkingRecordExit(@PathVariable final String
+	 *               licensePlate) {
+	 * 
+	 *               }
+	 * 
+	 * 				@GetMapping("/listParkingRecordByLicensePlate/{licensePlate}")
+	 *               public void listParkingRecordByLicensePlate(@PathVariable final
+	 *               String licensePlate) {
+	 * 
+	 *               }
 	 */
-
-	@GetMapping("/registerParkingRecordEntry/{lastName}")
-	public void registerParkingRecordEntry(@PathVariable final String licensePlate,
-			@PathVariable final String engineCapacity, @PathVariable final String vehicleType) {
-
-	}
-
-	@GetMapping("/registerParkingRecordExit/{licensePlate}")
-	public void registerParkingRecordExit(@PathVariable final String licensePlate) {
-
-	}
-
-	@GetMapping("/listParkingRecordByLicensePlate/{licensePlate}")
-	public void listParkingRecordByLicensePlate(@PathVariable final String licensePlate) {
-
-	}
 
 }

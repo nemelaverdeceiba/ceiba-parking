@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 
 import com.ceiba.builder.ParkingRecordBuilder;
 import com.ceiba.domain.ParkingRecordDomain;
+import com.ceiba.iservice.IParkinExitService;
 import com.ceiba.repository.ParkingRecordRepository;
 
 /**
@@ -14,7 +15,7 @@ import com.ceiba.repository.ParkingRecordRepository;
  *
  */
 @Service
-public class ParkinExitService {
+public class ParkinExitService implements IParkinExitService {
 
 	/**
 	 * 
@@ -52,6 +53,7 @@ public class ParkinExitService {
 	 * @param parkingRecord
 	 * @return
 	 */
+	@Override
 	public ParkingRecordDomain registerParkingExit(ParkingRecordDomain parkingRecord) {
 		return ParkingRecordBuilder.convertirToDominio(
 				parkingRecordRepository.save(ParkingRecordBuilder.convertirToEntity(parkingRecord)));

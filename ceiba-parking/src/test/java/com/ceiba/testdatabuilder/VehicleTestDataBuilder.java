@@ -5,7 +5,7 @@ import com.ceiba.domain.VehicleDomain;
 public class VehicleTestDataBuilder {
 
 	private static final String LICENSE_PLATE = "NFD39D";
-	private static final int ENGINE_CAPACITY = 150;
+	private static final int CUBIC_CENTIMETERS = 150;
 	private static final String VEHICLE_TYPE = "Motorbyke";
 
 	/**
@@ -16,7 +16,7 @@ public class VehicleTestDataBuilder {
 	/**
 	 * Cilindraje del vehiculo.
 	 */
-	private int engineCapacity;
+	private Integer cubicCentimeters;
 
 	/**
 	 * Tipo de vehiculo.
@@ -31,7 +31,7 @@ public class VehicleTestDataBuilder {
 	 */
 	public VehicleTestDataBuilder() {
 		this.licensePlate = LICENSE_PLATE;
-		this.engineCapacity = ENGINE_CAPACITY;
+		this.cubicCentimeters = CUBIC_CENTIMETERS;
 		this.vehicleType = VEHICLE_TYPE;
 
 	}
@@ -54,11 +54,11 @@ public class VehicleTestDataBuilder {
 	 * 
 	 * @author nelson.laverde
 	 * @date Jan 29, 2019
-	 * @param engineCapacity
+	 * @param cubicCentimeters
 	 * @return
 	 */
-	public VehicleTestDataBuilder withEngineCapacity(int engineCapacity) {
-		this.engineCapacity = engineCapacity;
+	public VehicleTestDataBuilder withEngineCapacity(Integer cubicCentimeters) {
+		this.cubicCentimeters = cubicCentimeters;
 		return this;
 	}
 
@@ -83,6 +83,6 @@ public class VehicleTestDataBuilder {
 	 * @return
 	 */
 	public VehicleDomain build() {
-		return new VehicleDomain(this.licensePlate, this.engineCapacity, this.vehicleType);
+		return new VehicleDomain(this.licensePlate, this.cubicCentimeters, this.vehicleType);
 	}
 }

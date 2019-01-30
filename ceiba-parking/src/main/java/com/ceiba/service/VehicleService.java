@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.ceiba.builder.VehicleBuilder;
 import com.ceiba.domain.VehicleDomain;
 import com.ceiba.entity.VehicleEntity;
+import com.ceiba.iservice.IVehicleService;
 import com.ceiba.repository.VehicleRepository;
 
 /**
@@ -15,7 +16,7 @@ import com.ceiba.repository.VehicleRepository;
  *
  */
 @Service
-public class VehicleService {
+public class VehicleService implements IVehicleService {
 
 	/**
 	 * 

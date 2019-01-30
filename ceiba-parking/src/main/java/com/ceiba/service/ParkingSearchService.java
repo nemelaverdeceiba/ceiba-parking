@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ceiba.domain.ParkingRecordDomain;
+import com.ceiba.iservice.IParkingSearchService;
 import com.ceiba.repository.ParkingRecordRepository;
 
 /**
@@ -15,7 +16,7 @@ import com.ceiba.repository.ParkingRecordRepository;
  *
  */
 @Service
-public class ParkingSearchService {
+public class ParkingSearchService implements IParkingSearchService{
 
 	/**
 	 * 
@@ -31,6 +32,12 @@ public class ParkingSearchService {
 	public ParkingSearchService(ParkingRecordRepository parkingRecordRepository) {
 		super();
 		this.parkingRecordRepository = parkingRecordRepository;
+	}
+
+	@Override
+	public List<ParkingRecordDomain> listParkedRecords() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	/*
