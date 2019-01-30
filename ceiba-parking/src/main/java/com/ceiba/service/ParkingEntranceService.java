@@ -51,6 +51,13 @@ public class ParkingEntranceService implements IParkingEntranceService {
 
 	/**
 	 * @author nelson.laverde
+	 * @date Jan 30, 2019
+	 */
+	public ParkingEntranceService() {
+	}
+
+	/**
+	 * @author nelson.laverde
 	 * @date Jan 29, 2019
 	 * @param parkingRecordRepository
 	 * @param vehicleService
@@ -73,9 +80,9 @@ public class ParkingEntranceService implements IParkingEntranceService {
 		boolean availablePark = true;
 		int countParkedVehicles = parkingRecordRepository.countBusyParkingByVehicleType(vehicleType).intValue();
 
-		if ((vehicleType.equals(VehicleTypeEnum.CAR) && countParkedVehicles > GeneralConstans.COUNT_PARKING_CARS)
+		if ((vehicleType.equals(VehicleTypeEnum.CAR) && countParkedVehicles >= GeneralConstans.COUNT_PARKING_CARS)
 				|| (vehicleType.equals(VehicleTypeEnum.MOTORBYKE)
-						&& countParkedVehicles > GeneralConstans.COUNT_PARKING_MOTORBYKES)) {
+						&& countParkedVehicles >= GeneralConstans.COUNT_PARKING_MOTORBYKES)) {
 			availablePark = false;
 		}
 
@@ -109,7 +116,7 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 * @date Jan 29, 2019
 	 * @return
 	 */
-	public boolean isAvailableDayToParkByLetterA() {
+	private boolean isAvailableDayToParkByLetterA() {
 		boolean isAvailable = false;
 		Integer dayOfWeek = Calendar.getInstance().get(Calendar.DAY_OF_WEEK);
 		if (Arrays.asList(GeneralConstans.AVAILABLE_DAYS_TO_PARK_WITH_LETTER_A).contains(dayOfWeek)) {

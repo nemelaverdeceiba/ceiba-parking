@@ -26,6 +26,13 @@ public class VehicleService implements IVehicleService {
 
 	/**
 	 * @author nelson.laverde
+	 * @date Jan 30, 2019
+	 */
+	public VehicleService() {
+	}
+
+	/**
+	 * @author nelson.laverde
 	 * @date Jan 29, 2019
 	 * @param vehicleRepository
 	 */

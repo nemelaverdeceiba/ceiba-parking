@@ -1,4 +1,4 @@
-package com.ceiba.testdatabuilder;
+package com.ceiba.ceibaparking.testdatabuilder;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -16,7 +16,6 @@ import com.ceiba.domain.VehicleDomain;
 public class ParkingRecordTestDataBuilder {
 
 	private static final Date ENTRY_DATE = Calendar.getInstance().getTime();
-	private static final Date OUT_DATE = Calendar.getInstance().getTime();
 	private static final double BILL_VALUE = 0;
 
 	/**
@@ -47,7 +46,7 @@ public class ParkingRecordTestDataBuilder {
 	 */
 	public ParkingRecordTestDataBuilder() {
 		this.entryDate = ENTRY_DATE;
-		this.outDate = OUT_DATE;
+		this.outDate = null;
 		this.billValue = BILL_VALUE;
 
 	}

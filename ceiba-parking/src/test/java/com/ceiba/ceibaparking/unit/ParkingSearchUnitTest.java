@@ -1,4 +1,4 @@
-package com.ceiba.unit;
+package com.ceiba.ceibaparking.unit;
 
 public class ParkingSearchUnitTest {
 

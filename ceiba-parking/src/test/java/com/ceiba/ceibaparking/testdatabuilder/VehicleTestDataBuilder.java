@@ -1,4 +1,4 @@
-package com.ceiba.testdatabuilder;
+package com.ceiba.ceibaparking.testdatabuilder;
 
 import com.ceiba.domain.VehicleDomain;
 
@@ -6,7 +6,7 @@ public class VehicleTestDataBuilder {
 
 	private static final String LICENSE_PLATE = "NFD39D";
 	private static final int CUBIC_CENTIMETERS = 150;
-	private static final String VEHICLE_TYPE = "Motorbyke";
+	private static final String VEHICLE_TYPE = "MOTORBYKE";
 
 	/**
 	 * Placa del vehiculo.
