@@ -21,7 +21,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 echo "------------>Checkout<------------"
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']],
+                checkout([$class: 'GitSCM', branches: [[name: '*/develope']],
                     doGenerateSubmoduleConfigurations: false, extensions: [], gitTool:
                     'Git_Centos', submoduleCfg: [], userRemoteConfigs: [[credentialsId:
                             'GitHub_nemelaverdeceiba', url:
