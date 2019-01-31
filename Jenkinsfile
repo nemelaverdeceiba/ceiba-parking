@@ -85,8 +85,8 @@ pipeline {
     
         post {
        success {
-           junit 'ceiba-parking/jacoco/test-results/*.xml'
-           jacoco classPattern: '**/build/classes', execPattern: 'ceiba-parking/jacoco/jacocoTest.exec', sourcePattern: '**/src/main/java'
+           junit 'jacoco/test-results/*.xml'
+           jacoco classPattern: '**/build/classes', execPattern: 'jacoco/jacocoTest.exec', sourcePattern: '**/src/main/java'
        }
        
        failure {
