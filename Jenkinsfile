@@ -81,7 +81,7 @@ pipeline {
         echo 'This will run only if the state of the Pipeline has changed'
         echo 'For example, if the Pipeline was previously failing but is now successful'
     }
-}*/
+}
     
         post {
        success {
@@ -92,6 +92,6 @@ pipeline {
        failure {
            mail to: 'nelson.laverde@ceiba.com.co',  body: "\n\nMensaje de error: Fallo en la ejecución del pipeline \n\nProyecto: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}  URL de build: ${env.BUILD_URL}", subject: "ERROR CI: Project name -> ${env.JOB_NAME}"
        }
-   }
+   }/*
     
 }
