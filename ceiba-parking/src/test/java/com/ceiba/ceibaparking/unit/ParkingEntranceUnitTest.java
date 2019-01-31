@@ -68,12 +68,12 @@ public class ParkingEntranceUnitTest {
 			iVehicleService);
 
 	/**
-	 * Excepción cuando no ahi disponibilidad de parqueaderos.
+	 * ExcepciÃ³n cuando no ahi disponibilidad de parqueaderos.
 	 */
 	public static final String NO_AVAILABLE_PARKING_SPACE = "No existen espacios disponibles para el tipo de vehiculo.";
 
 	/**
-	 * Excepción cuando no es permitido parquear por que la placa inicia con letra A
+	 * ExcepciÃ³n cuando no es permitido parquear por que la placa inicia con letra A
 	 * y no es domingo ni lunes.
 	 */
 	public static final String NO_AVAILABLE_PARKING_BY_LICENSE_PLATE_LETTER_A = "No esta autorizado para ingresar debido a que las placas que inician con la letra A solo pueden ingresar los domingos y lunes.";
@@ -140,7 +140,7 @@ public class ParkingEntranceUnitTest {
 	}
 
 	/**
-	 * Prueba unitaria de fallo con placa que inicia por letra A y en un día que no
+	 * Prueba unitaria de fallo con placa que inicia por letra A y en un dÃ­a que no
 	 * es domingo ni lunes.
 	 */
 	@Test
@@ -172,7 +172,7 @@ public class ParkingEntranceUnitTest {
 	}
 
 	/**
-	 * Prueba unitaria de exito con placa que inicia por letra A y en un día domingo
+	 * Prueba unitaria de exito con placa que inicia por letra A y en un dÃ­a domingo
 	 * o lunes.
 	 */
 
@@ -238,5 +238,11 @@ public class ParkingEntranceUnitTest {
 //		// Assert
 //		// ------------------------------------------
 //		assertTrue(registered);
+	}
+	
+		@Test
+	public void testmichael() {
+		assertTrue(true);
+		
 	}
 }
