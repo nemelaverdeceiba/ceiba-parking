@@ -82,4 +82,16 @@ pipeline {
         echo 'For example, if the Pipeline was previously failing but is now successful'
     }
 }*/
+    
+        post {
+       success {
+           junit 'ceiba-parking/jacoco/test-results/*.xml'
+           jacoco classPattern: '**/build/classes', execPattern: 'ceiba-parking/jacoco/jacocoTest.exec', sourcePattern: '**/src/main/java'
+       }
+       
+       failure {
+           mail to: 'nelson.laverde@ceiba.com.co',  body: "\n\nMensaje de error: Fallo en la ejecución del pipeline \n\nProyecto: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}  URL de build: ${env.BUILD_URL}", subject: "ERROR CI: Project name -> ${env.JOB_NAME}"
+       }
+   }
+    
 }
