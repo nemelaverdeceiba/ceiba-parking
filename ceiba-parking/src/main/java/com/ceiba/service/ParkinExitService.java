@@ -49,7 +49,11 @@ public class ParkinExitService implements IParkinExitService {
 	 * @date Jan 29, 2019
 	 * @return
 	 */
-	public double calculateBillValueOfparking() {
+	private double calculateBillValueOfparking(ParkingRecordDomain parkingRecord) {
+		
+		
+		
+		
 		return 0;
 
 	}
