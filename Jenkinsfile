@@ -92,6 +92,6 @@ pipeline {
        failure {
            mail to: 'nelson.laverde@ceiba.com.co',  body: "\n\nMensaje de error: Fallo en la ejecución del pipeline \n\nProyecto: ${env.JOB_NAME} Build Number: ${env.BUILD_NUMBER}  URL de build: ${env.BUILD_URL}", subject: "ERROR CI: Project name -> ${env.JOB_NAME}"
        }
-   }/*
+   }*/
     
 }
