@@ -243,6 +243,7 @@ public class ParkingEntranceUnitTest {
 	@Test
 	public void testmichael() {
 		assertTrue(true);
+		
 	}
 
 }
