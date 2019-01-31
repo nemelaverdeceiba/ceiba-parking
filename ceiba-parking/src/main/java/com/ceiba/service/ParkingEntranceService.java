@@ -1,7 +1,7 @@
 package com.ceiba.service;
 
+import java.time.LocalDateTime;
 import java.util.Arrays;
-import java.util.Calendar;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import com.ceiba.exception.AplicationException;
 import com.ceiba.iservice.IParkingEntranceService;
 import com.ceiba.iservice.IVehicleService;
 import com.ceiba.repository.ParkingRecordRepository;
-import com.ceiba.utilities.CalendarUtil;
+import com.ceiba.utilities.DateUtil;
 
 /**
  * Servicio para la funcionalidad de registrar entrada de vehiculo al
@@ -42,7 +42,7 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	private IVehicleService vehicleService;
 
 	@Autowired
-	private CalendarUtil calendarUtil;
+	private DateUtil dateUtil;
 
 	/**
 	 * Excepción cuando no ahi disponibilidad de parqueaderos.
@@ -122,8 +122,8 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 */
 	private boolean isAvailableDayToParkByLetterA() {
 		boolean isAvailable = false;
-		Calendar calendar = calendarUtil.getCalendarInstance();
-		Integer dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+		LocalDateTime calendar = dateUtil.getActualDate();
+		Integer dayOfWeek = calendar.getDayOfWeek().getValue();
 		if (Arrays.asList(GeneralConstans.AVAILABLE_DAYS_TO_PARK_WITH_LETTER_A).contains(dayOfWeek)) {
 			isAvailable = true;
 		}
@@ -154,7 +154,7 @@ public class ParkingEntranceService implements IParkingEntranceService {
 
 		VehicleEntity vehicleEntity = vehicleService
 				.findVehicleByLicensePlate(parkingRecord.getVehicle().getLicensePlate());
-		if (vehicleEntity != null) {
+		if (vehicleEntity == null) {
 			vehicleEntity = vehicleService.insertVehicle(parkingRecord.getVehicle());
 
 		}

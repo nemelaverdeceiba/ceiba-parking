@@ -1,6 +1,6 @@
 package com.ceiba.constans;
 
-import java.util.Calendar;
+import java.time.DayOfWeek;
 
 /**
  * Constantes generales de la aplicación.
@@ -34,7 +34,8 @@ public final class GeneralConstans {
 	/**
 	 * Valor númericoS dias permitidos parquear con placa que inicia por la A.
 	 */
-	public static final Integer[] AVAILABLE_DAYS_TO_PARK_WITH_LETTER_A = { Calendar.SUNDAY, Calendar.MONDAY };
+	public static final Integer[] AVAILABLE_DAYS_TO_PARK_WITH_LETTER_A = { DayOfWeek.MONDAY.getValue(),
+			DayOfWeek.SUNDAY.getValue() };
 
 	/**
 	 * Valor de la hora de parqueo tipo carro.

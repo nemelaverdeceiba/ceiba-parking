@@ -38,6 +38,26 @@ public class VehicleEntity {
 	public VehicleEntity() {
 		super();
 	}
+	
+	
+
+	/**
+	 * @author nelson.laverde
+	 * @date   Jan 31, 2019
+	 * @param id
+	 * @param licensePlate
+	 * @param cubicCentimeters
+	 * @param vehicleType
+	 */
+	public VehicleEntity(Long id, String licensePlate, Integer cubicCentimeters, VehicleTypeEnum vehicleType) {
+		super();
+		this.id = id;
+		this.licensePlate = licensePlate;
+		this.cubicCentimeters = cubicCentimeters;
+		this.vehicleType = vehicleType;
+	}
+
+
 
 	/**
 	 * @author nelson.laverde

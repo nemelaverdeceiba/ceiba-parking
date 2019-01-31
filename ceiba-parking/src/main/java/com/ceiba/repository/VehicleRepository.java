@@ -1,7 +1,6 @@
 package com.ceiba.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import com.ceiba.entity.VehicleEntity;
 
@@ -12,7 +11,7 @@ import com.ceiba.entity.VehicleEntity;
  * @date Jan 29, 2019
  *
  */
-@Repository
+//@Repository
 public interface VehicleRepository extends JpaRepository<VehicleEntity, Long> {
 
 	/**

@@ -49,6 +49,7 @@ public class VehicleService implements IVehicleService {
 	 * @param licensePlate
 	 * @return
 	 */
+	@Override
 	public VehicleEntity findVehicleByLicensePlate(String licensePlate) {
 		return vehicleRepository.findVehicleByLicensePlate(licensePlate);
 
@@ -62,6 +63,7 @@ public class VehicleService implements IVehicleService {
 	 * @param vehicleDomain
 	 * @return
 	 */
+	@Override
 	public VehicleEntity insertVehicle(VehicleDomain vehicleDomain) {
 		return vehicleRepository.save(VehicleBuilder.convertToEntity(vehicleDomain));
 	}
