@@ -19,5 +19,7 @@ public interface VehicleRepository extends JpaRepository<VehicleEntity, Long> {
 	 * Permite obtener el vehiculo por n�mero de placa.
 	 */
 	VehicleEntity findVehicleByLicensePlate(String licensePlate);
+	
+	
 
 }
