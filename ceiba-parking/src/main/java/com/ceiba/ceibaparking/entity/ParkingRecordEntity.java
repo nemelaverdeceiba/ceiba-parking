@@ -1,4 +1,4 @@
-package com.ceiba.entity;
+package com.ceiba.ceibaparking.entity;
 
 import java.util.Date;
 
@@ -35,7 +35,7 @@ public class ParkingRecordEntity {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(nullable = false)
-	private VehicleEntity vehicleEntity;
+	private VehicleEntity vehicle;
 
 	/**
 	 * @author nelson.laverde
@@ -122,8 +122,8 @@ public class ParkingRecordEntity {
 	 * @date Jan 29, 2019
 	 * @return the vehicleEntity
 	 */
-	public VehicleEntity getVehicleEntity() {
-		return vehicleEntity;
+	public VehicleEntity getVehicle() {
+		return vehicle;
 	}
 
 	/**
@@ -131,8 +131,8 @@ public class ParkingRecordEntity {
 	 * @date Jan 29, 2019
 	 * @param vehicleEntity the vehicleEntity to set
 	 */
-	public void setVehicleEntity(VehicleEntity vehicleEntity) {
-		this.vehicleEntity = vehicleEntity;
+	public void setVehicleEntity(VehicleEntity vehicle) {
+		this.vehicle = vehicle;
 	}
 
 }

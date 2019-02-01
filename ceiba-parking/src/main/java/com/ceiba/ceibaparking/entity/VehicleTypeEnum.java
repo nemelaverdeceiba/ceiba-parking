@@ -1,4 +1,4 @@
-package com.ceiba.entity;
+package com.ceiba.ceibaparking.entity;
 
 /**
  * 

@@ -1,11 +1,11 @@
-package com.ceiba.controller;
+package com.ceiba.ceibaparking.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ceiba.repository.ParkingRecordRepository;
+import com.ceiba.ceibaparking.repository.ParkingRecordRepository;
 
 //@RestController
 public class ParkingRecordController {

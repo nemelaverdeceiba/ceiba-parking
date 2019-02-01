@@ -1,7 +1,7 @@
-package com.ceiba.builder;
+package com.ceiba.ceibaparking.builder;
 
-import com.ceiba.domain.ParkingRecordDomain;
-import com.ceiba.entity.ParkingRecordEntity;
+import com.ceiba.ceibaparking.domain.ParkingRecordDomain;
+import com.ceiba.ceibaparking.entity.ParkingRecordEntity;
 
 /**
  * Permite convertir el registro de parqueo del objeto del dominio al de entidad

@@ -1,13 +1,13 @@
-package com.ceiba.service;
+package com.ceiba.ceibaparking.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ceiba.builder.VehicleBuilder;
-import com.ceiba.domain.VehicleDomain;
-import com.ceiba.entity.VehicleEntity;
-import com.ceiba.iservice.IVehicleService;
-import com.ceiba.repository.VehicleRepository;
+import com.ceiba.ceibaparking.builder.VehicleBuilder;
+import com.ceiba.ceibaparking.domain.VehicleDomain;
+import com.ceiba.ceibaparking.entity.VehicleEntity;
+import com.ceiba.ceibaparking.iservice.IVehicleService;
+import com.ceiba.ceibaparking.repository.VehicleRepository;
 
 /**
  * 

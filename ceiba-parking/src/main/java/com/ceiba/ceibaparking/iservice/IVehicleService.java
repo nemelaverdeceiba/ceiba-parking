@@ -1,7 +1,7 @@
-package com.ceiba.iservice;
+package com.ceiba.ceibaparking.iservice;
 
-import com.ceiba.domain.VehicleDomain;
-import com.ceiba.entity.VehicleEntity;
+import com.ceiba.ceibaparking.domain.VehicleDomain;
+import com.ceiba.ceibaparking.entity.VehicleEntity;
 
 /**
  * 

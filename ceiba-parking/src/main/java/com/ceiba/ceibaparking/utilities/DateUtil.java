@@ -1,6 +1,8 @@
-package com.ceiba.utilities;
+package com.ceiba.ceibaparking.utilities;
 
 import java.time.LocalDateTime;
+
+import org.springframework.stereotype.Component;
 
 /**
  * Clase utilitaria de fecha para facilitar las pruebas con Mockito.
@@ -9,6 +11,7 @@ import java.time.LocalDateTime;
  * @date Jan 31, 2019
  *
  */
+@Component
 public class DateUtil {
 
 	/**

@@ -1,21 +1,22 @@
-package com.ceiba.repository;
+package com.ceiba.ceibaparking.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-import com.ceiba.entity.VehicleEntity;
+import com.ceiba.ceibaparking.entity.VehicleEntity;
 
 /**
- * Permite definir los métodos de persistencia de la entidad vehiculo.
+ * Permite definir los mï¿½todos de persistencia de la entidad vehiculo.
  * 
  * @author nelson.laverde
  * @date Jan 29, 2019
  *
  */
-//@Repository
+@Repository
 public interface VehicleRepository extends JpaRepository<VehicleEntity, Long> {
 
 	/**
-	 * Permite obtener el vehiculo por número de placa.
+	 * Permite obtener el vehiculo por nï¿½mero de placa.
 	 */
 	VehicleEntity findVehicleByLicensePlate(String licensePlate);
 

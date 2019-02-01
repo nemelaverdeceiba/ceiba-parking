@@ -1,8 +1,8 @@
-package com.ceiba.builder;
+package com.ceiba.ceibaparking.builder;
 
-import com.ceiba.domain.VehicleDomain;
-import com.ceiba.entity.VehicleEntity;
-import com.ceiba.entity.VehicleTypeEnum;
+import com.ceiba.ceibaparking.domain.VehicleDomain;
+import com.ceiba.ceibaparking.entity.VehicleEntity;
+import com.ceiba.ceibaparking.entity.VehicleTypeEnum;
 
 /**
  * * Permite convertir el vehiculo del objeto del dominio al de entidad y

@@ -14,20 +14,20 @@ import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.ceiba.ceibaparking.constans.GeneralConstans;
+import com.ceiba.ceibaparking.domain.ParkingRecordDomain;
+import com.ceiba.ceibaparking.domain.VehicleDomain;
+import com.ceiba.ceibaparking.entity.VehicleTypeEnum;
+import com.ceiba.ceibaparking.exception.AplicationException;
+import com.ceiba.ceibaparking.iservice.IParkingEntranceService;
+import com.ceiba.ceibaparking.iservice.IVehicleService;
+import com.ceiba.ceibaparking.repository.ParkingRecordRepository;
+import com.ceiba.ceibaparking.repository.VehicleRepository;
+import com.ceiba.ceibaparking.service.ParkingEntranceService;
+import com.ceiba.ceibaparking.service.VehicleService;
 import com.ceiba.ceibaparking.testdatabuilder.ParkingRecordTestDataBuilder;
 import com.ceiba.ceibaparking.testdatabuilder.VehicleTestDataBuilder;
-import com.ceiba.constans.GeneralConstans;
-import com.ceiba.domain.ParkingRecordDomain;
-import com.ceiba.domain.VehicleDomain;
-import com.ceiba.entity.VehicleTypeEnum;
-import com.ceiba.exception.AplicationException;
-import com.ceiba.iservice.IParkingEntranceService;
-import com.ceiba.iservice.IVehicleService;
-import com.ceiba.repository.ParkingRecordRepository;
-import com.ceiba.repository.VehicleRepository;
-import com.ceiba.service.ParkingEntranceService;
-import com.ceiba.service.VehicleService;
-import com.ceiba.utilities.DateUtil;
+import com.ceiba.ceibaparking.utilities.DateUtil;
 
 /**
  * Pruebas unitarias a funcionalidad de registro de entrada al parqueadero.
@@ -65,7 +65,7 @@ public class ParkingEntranceUnitTest {
 	 */
 	@InjectMocks
 	private IParkingEntranceService iParkingEntranceService = new ParkingEntranceService(parkingRecordRepository,
-			iVehicleService);
+			iVehicleService, dateUtil);
 
 	/**
 	 * Excepción cuando no ahi disponibilidad de parqueaderos.
@@ -178,7 +178,7 @@ public class ParkingEntranceUnitTest {
 
 	@Test
 	public void successParkingByLicensePlateWithALetter() {
-	/*	boolean success = false;
+		boolean success = false;
 		// Arrange
 		VehicleTestDataBuilder vehicleTestDataBuilder = new VehicleTestDataBuilder();
 		VehicleDomain vehicleDomain = vehicleTestDataBuilder.withLicensePlate("ABC123").build();
@@ -199,7 +199,7 @@ public class ParkingEntranceUnitTest {
 		}
 
 		// Assert
-		assertTrue(success);*/
+		assertTrue(success);
 	}
 
 	@Test
@@ -240,11 +240,10 @@ public class ParkingEntranceUnitTest {
 //		assertTrue(registered);
 	}
 
-
 	@Test
 	public void testPrueba() {
 		assertTrue(true);
-		
+
 	}
 
 }

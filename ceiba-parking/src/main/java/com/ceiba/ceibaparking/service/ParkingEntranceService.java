@@ -1,4 +1,4 @@
-package com.ceiba.service;
+package com.ceiba.ceibaparking.service;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -6,17 +6,17 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ceiba.builder.ParkingRecordBuilder;
-import com.ceiba.constans.GeneralConstans;
-import com.ceiba.domain.ParkingRecordDomain;
-import com.ceiba.entity.ParkingRecordEntity;
-import com.ceiba.entity.VehicleEntity;
-import com.ceiba.entity.VehicleTypeEnum;
-import com.ceiba.exception.AplicationException;
-import com.ceiba.iservice.IParkingEntranceService;
-import com.ceiba.iservice.IVehicleService;
-import com.ceiba.repository.ParkingRecordRepository;
-import com.ceiba.utilities.DateUtil;
+import com.ceiba.ceibaparking.builder.ParkingRecordBuilder;
+import com.ceiba.ceibaparking.constans.GeneralConstans;
+import com.ceiba.ceibaparking.domain.ParkingRecordDomain;
+import com.ceiba.ceibaparking.entity.ParkingRecordEntity;
+import com.ceiba.ceibaparking.entity.VehicleEntity;
+import com.ceiba.ceibaparking.entity.VehicleTypeEnum;
+import com.ceiba.ceibaparking.exception.AplicationException;
+import com.ceiba.ceibaparking.iservice.IParkingEntranceService;
+import com.ceiba.ceibaparking.iservice.IVehicleService;
+import com.ceiba.ceibaparking.repository.ParkingRecordRepository;
+import com.ceiba.ceibaparking.utilities.DateUtil;
 
 /**
  * Servicio para la funcionalidad de registrar entrada de vehiculo al
@@ -41,11 +41,12 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	@Autowired
 	private IVehicleService vehicleService;
 
-	@Autowired
-	private DateUtil dateUtil;
+	
+	  @Autowired private DateUtil dateUtil;
+	 
 
 	/**
-	 * Excepción cuando no ahi disponibilidad de parqueaderos.
+	 * Excepciï¿½n cuando no ahi disponibilidad de parqueaderos.
 	 */
 	public static final String NO_AVAILABLE_PARKING_SPACE = "No existen espacios disponibles para el tipo de vehiculo.";
 	/**
@@ -66,11 +67,12 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 * @param parkingRecordRepository
 	 * @param vehicleService
 	 */
-	public ParkingEntranceService(ParkingRecordRepository parkingRecordRepository, IVehicleService vehicleService) {
-		super();
-		this.parkingRecordRepository = parkingRecordRepository;
-		this.vehicleService = vehicleService;
-	}
+	
+	  public ParkingEntranceService(ParkingRecordRepository
+	  parkingRecordRepository, IVehicleService vehicleService, DateUtil dateUtil) {
+	  super(); this.parkingRecordRepository = parkingRecordRepository;
+	  this.vehicleService = vehicleService; this.dateUtil = dateUtil; }
+	 
 
 	/**
 	 * Permite validar la disponibilidad de puestos de parqueo.
@@ -114,7 +116,7 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	}
 
 	/**
-	 * Permite determinar si el día de parqueo es permitido.
+	 * Permite determinar si el dï¿½a de parqueo es permitido.
 	 * 
 	 * @author nelson.laverde
 	 * @date Jan 29, 2019
@@ -122,7 +124,8 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 */
 	private boolean isAvailableDayToParkByLetterA() {
 		boolean isAvailable = false;
-		LocalDateTime calendar = dateUtil.getActualDate();
+		// LocalDateTime calendar = dateUtil.getActualDate();
+		LocalDateTime calendar = LocalDateTime.now();
 		Integer dayOfWeek = calendar.getDayOfWeek().getValue();
 		if (Arrays.asList(GeneralConstans.AVAILABLE_DAYS_TO_PARK_WITH_LETTER_A).contains(dayOfWeek)) {
 			isAvailable = true;
@@ -141,13 +144,13 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	@Override
 	public boolean registerParkingEntry(ParkingRecordDomain parkingRecord) throws AplicationException {
 
-		// Validación disponibilidad.
+		// Validaciï¿½n disponibilidad.
 		VehicleTypeEnum vehicleType = VehicleTypeEnum.valueOf(parkingRecord.getVehicle().getVehicleType());
 		if (!validateAvailabilityParking(vehicleType)) {
 			throw new AplicationException(NO_AVAILABLE_PARKING_SPACE);
 		}
 
-		// Validación por plata con letra inicial A.
+		// Validaciï¿½n por plata con letra inicial A.
 		if (!validateDayByLicensePlate(parkingRecord.getVehicle().getLicensePlate())) {
 			throw new AplicationException(NO_AVAILABLE_PARKING_BY_LICENSE_PLATE_LETTER_A);
 		}

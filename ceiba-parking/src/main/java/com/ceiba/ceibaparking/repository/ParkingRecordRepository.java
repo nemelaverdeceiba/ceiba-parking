@@ -1,4 +1,4 @@
-package com.ceiba.repository;
+package com.ceiba.ceibaparking.repository;
 
 import java.util.List;
 
@@ -7,11 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import com.ceiba.entity.ParkingRecordEntity;
-import com.ceiba.entity.VehicleTypeEnum;
+import com.ceiba.ceibaparking.entity.ParkingRecordEntity;
+import com.ceiba.ceibaparking.entity.VehicleTypeEnum;
 
 /**
- * Permite definir los métodos de persistencia de la entidad registro de
+ * Permite definir los mï¿½todos de persistencia de la entidad registro de
  * parqueo.
  * 
  * @author nelson.laverde
@@ -24,7 +24,7 @@ public interface ParkingRecordRepository extends JpaRepository<ParkingRecordEnti
 	/**
 	 * Permite obtener la cantidad de parqueaderos ocupados del tipo de vehiculo.
 	 */
-	@Query(value = "SELECT COUNT(p.id) FROM ParkingRecord p WHERE (p.vehicleEntity.vehicleType = :vehicleType) AND p.outDate IS NULL")
+	@Query(value = "SELECT COUNT(p.id) FROM ParkingRecord p WHERE (p.vehicle.vehicleType = :vehicleType) AND p.outDate IS NULL")
 	Integer countBusyParkingByVehicleType(@Param("vehicleType") VehicleTypeEnum vehicleType);
 
 	/**

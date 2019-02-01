@@ -1,4 +1,4 @@
-package com.ceiba.entity;
+package com.ceiba.ceibaparking.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -38,26 +38,20 @@ public class VehicleEntity {
 	public VehicleEntity() {
 		super();
 	}
-	
-	
 
 	/**
 	 * @author nelson.laverde
-	 * @date   Jan 31, 2019
-	 * @param id
+	 * @date Jan 31, 2019
 	 * @param licensePlate
 	 * @param cubicCentimeters
 	 * @param vehicleType
 	 */
-	public VehicleEntity(Long id, String licensePlate, Integer cubicCentimeters, VehicleTypeEnum vehicleType) {
+	public VehicleEntity(String licensePlate, Integer cubicCentimeters, VehicleTypeEnum vehicleType) {
 		super();
-		this.id = id;
 		this.licensePlate = licensePlate;
 		this.cubicCentimeters = cubicCentimeters;
 		this.vehicleType = vehicleType;
 	}
-
-
 
 	/**
 	 * @author nelson.laverde

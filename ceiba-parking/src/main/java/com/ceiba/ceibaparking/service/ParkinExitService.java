@@ -1,12 +1,12 @@
-package com.ceiba.service;
+package com.ceiba.ceibaparking.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ceiba.builder.ParkingRecordBuilder;
-import com.ceiba.domain.ParkingRecordDomain;
-import com.ceiba.iservice.IParkinExitService;
-import com.ceiba.repository.ParkingRecordRepository;
+import com.ceiba.ceibaparking.builder.ParkingRecordBuilder;
+import com.ceiba.ceibaparking.domain.ParkingRecordDomain;
+import com.ceiba.ceibaparking.iservice.IParkinExitService;
+import com.ceiba.ceibaparking.repository.ParkingRecordRepository;
 
 /**
  * 

@@ -1,6 +1,6 @@
 package com.ceiba.ceibaparking.testdatabuilder;
 
-import com.ceiba.domain.VehicleDomain;
+import com.ceiba.ceibaparking.domain.VehicleDomain;
 
 public class VehicleTestDataBuilder {
 

@@ -1,8 +1,8 @@
-package com.ceiba.iservice;
+package com.ceiba.ceibaparking.iservice;
 
 import java.util.List;
 
-import com.ceiba.domain.ParkingRecordDomain;
+import com.ceiba.ceibaparking.domain.ParkingRecordDomain;
 
 /**
  * 

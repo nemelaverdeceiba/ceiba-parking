@@ -3,8 +3,8 @@ package com.ceiba.ceibaparking.testdatabuilder;
 import java.util.Calendar;
 import java.util.Date;
 
-import com.ceiba.domain.ParkingRecordDomain;
-import com.ceiba.domain.VehicleDomain;
+import com.ceiba.ceibaparking.domain.ParkingRecordDomain;
+import com.ceiba.ceibaparking.domain.VehicleDomain;
 
 /**
  * Constructor de objetos registros de parqueadero.
