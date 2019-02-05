@@ -31,11 +31,24 @@ pipeline {
                 ])
             }
         }
+        
+        stage('Compile') {
+			steps{
+					echo "------------>Compile<------------"
+					sh 'gradle --b ceiba-parking/build.gradle compileJava'
+			}
+}
+        
+        
         stage('Unit Tests') {
             steps {
                 echo "------------>Unit Tests<------------"
                 //sh 'gradle --b ./build.gradle test'
                  sh 'gradle --b  ceiba-parking/build.gradle test'
+                
+                junit '**/build/test-results/test/*.xml' //aggregate test results - JUnit
+                step( [ $class: 'JacocoPublisher' ] )
+                
             }
         }
         stage('Integration Tests') {
