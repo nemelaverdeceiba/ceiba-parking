@@ -43,7 +43,7 @@ pipeline {
 	 	stage('Compile') {
 			steps{
 					echo "------------>Compile<------------"
-					sh 'gradle --b /build.gradle compileJava'
+					sh 'gradle --b ./build.gradle compileJava'
 			}
 		}
 	
@@ -74,7 +74,7 @@ pipeline {
 	 	stage('Build') {
 	 		steps {
 		 			echo "------------>Build<------------"
-		 			sh 'gradle --b /build.gradle build -x test'
+		 			sh 'gradle --b ./build.gradle build -x test'
 	 			}
 		}
 	 }
