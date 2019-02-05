@@ -3,6 +3,7 @@ package com.ceiba.ceibaparking.unit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.when;
 
 import java.time.LocalDateTime;
@@ -15,8 +16,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.ceiba.ceibaparking.constans.GeneralConstans;
+import com.ceiba.ceibaparking.converter.ParkingRecordConverter;
+import com.ceiba.ceibaparking.converter.ParkingRecordDomainConverter;
+import com.ceiba.ceibaparking.converter.VehicleConverter;
+import com.ceiba.ceibaparking.converter.VehicleDomainConverter;
 import com.ceiba.ceibaparking.domain.ParkingRecordDomain;
 import com.ceiba.ceibaparking.domain.VehicleDomain;
+import com.ceiba.ceibaparking.entity.ParkingRecordEntity;
+import com.ceiba.ceibaparking.entity.VehicleEntity;
 import com.ceiba.ceibaparking.entity.VehicleTypeEnum;
 import com.ceiba.ceibaparking.exception.AplicationException;
 import com.ceiba.ceibaparking.iservice.IParkingEntranceService;
@@ -52,20 +59,32 @@ public class ParkingEntranceUnitTest {
 	private VehicleRepository vehicleRepository;
 
 	@Mock
+	private ParkingRecordDomainConverter parkingRecordDomainConverter;
+
+	@Mock
+	private ParkingRecordConverter parkingRecordConverter;
+
+	@Mock
 	private DateUtil dateUtil;
+
+	@Mock
+	private VehicleDomainConverter vehicleDomainConverter;
+
+	@Mock
+	private VehicleConverter VehicleConverter;
 
 	/**
 	 * Inyeccion de mocks en el service de vehiculo.
 	 */
 	@InjectMocks
-	private IVehicleService iVehicleService = new VehicleService(vehicleRepository);
+	private IVehicleService iVehicleService = new VehicleService(vehicleRepository, vehicleDomainConverter);
 
 	/**
 	 * Inyeccion de mocks en el servicio de registro de parqueo.
 	 */
 	@InjectMocks
 	private IParkingEntranceService iParkingEntranceService = new ParkingEntranceService(parkingRecordRepository,
-			iVehicleService, dateUtil);
+			iVehicleService, dateUtil, parkingRecordDomainConverter, parkingRecordConverter);
 
 	/**
 	 * Excepción cuando no ahi disponibilidad de parqueaderos.
@@ -178,7 +197,7 @@ public class ParkingEntranceUnitTest {
 
 	@Test
 	public void successParkingByLicensePlateWithALetter() {
-		boolean success = false;
+		ParkingRecordDomain parkingRecordRegistered = null;
 		// Arrange
 		VehicleTestDataBuilder vehicleTestDataBuilder = new VehicleTestDataBuilder();
 		VehicleDomain vehicleDomain = vehicleTestDataBuilder.withLicensePlate("ABC123").build();
@@ -189,61 +208,57 @@ public class ParkingEntranceUnitTest {
 		// Lunes 28 enero 2019.
 		LocalDateTime monday = LocalDateTime.of(2019, 01, 28, 0, 0);
 		when(dateUtil.getActualDate()).thenReturn(monday);
+		when(vehicleRepository.save(any())).thenReturn(new VehicleEntity());
+		ParkingRecordEntity parkingRecordEntity = new ParkingRecordEntity();
+		when(parkingRecordDomainConverter.convert(parkingRecordDomain)).thenReturn(parkingRecordEntity);
+		when(parkingRecordRepository.save(any())).thenReturn(parkingRecordEntity);
+		when(parkingRecordConverter.convert(parkingRecordEntity)).thenReturn(new ParkingRecordDomain());
 
 		// Act
 		try {
-			success = iParkingEntranceService.registerParkingEntry(parkingRecordDomain);
+			parkingRecordRegistered = iParkingEntranceService.registerParkingEntry(parkingRecordDomain);
 
 		} catch (AplicationException e) {
 			fail();
 		}
 
 		// Assert
-		assertTrue(success);
+		assertTrue(parkingRecordRegistered != null);
 	}
 
 	@Test
 	public void successRegisterParkingEntry() {
-//		
-//		// ------------------------------------------
-//		// Arrange
-//		// ------------------------------------------
-//		boolean registered = false;
-//
-//		VehicleTypeEnum vehicleType = VehicleTypeEnum.CAR;
-//
-//		VehicleModel vehicleModel = generateVehicleModel(vehicleType);
-//
-//		when(vehicleRepository.findByPlate(vehicleModel.getPlate())).thenReturn(null);
-//
-//		when(vehicleRepository.save(any())).thenReturn(any());
-//
-//		when(parkingRegistryRepository.countParkedVehiclesByType(vehicleType)).thenReturn(0);
-//
-//		when(parkingRegistryRepository.save(any())).thenReturn(new ParkingRegistry());
-//
-//		when(calendarUtil.getCurrentDate()).thenReturn(Calendar.getInstance());
-//
-//		// ------------------------------------------
-//		// Act
-//		// ------------------------------------------
-//		try {
-//			registered = parkingRegistryService.registerEntry(vehicleModel);
-//
-//		} catch (ApplicationException e) {
-//			fail();
-//		}
-//
-//		// ------------------------------------------
-//		// Assert
-//		// ------------------------------------------
-//		assertTrue(registered);
-	}
 
-	@Test
-	public void testPrueba() {
-		assertTrue(true);
+		// Arrange
+		ParkingRecordDomain parkingRecordRegistered = null;
 
+		VehicleTestDataBuilder vehicleTestDataBuilder = new VehicleTestDataBuilder();
+		VehicleDomain vehicleDomain = vehicleTestDataBuilder.withLicensePlate("JKL999").build();
+
+		ParkingRecordTestDataBuilder parkingRecordTestDataBuilder = new ParkingRecordTestDataBuilder();
+		ParkingRecordDomain parkingRecordDomain = parkingRecordTestDataBuilder.withVehicle(vehicleDomain).build();
+
+		when(vehicleRepository.findVehicleByLicensePlate(vehicleDomain.getLicensePlate()))
+				.thenReturn(new VehicleEntity());
+		// Lunes 28 enero 2019.
+		LocalDateTime monday = LocalDateTime.of(2019, 01, 28, 0, 0);
+		when(dateUtil.getActualDate()).thenReturn(monday);
+
+		ParkingRecordEntity parkingRecordEntity = new ParkingRecordEntity();
+		when(parkingRecordDomainConverter.convert(parkingRecordDomain)).thenReturn(parkingRecordEntity);
+		when(parkingRecordRepository.save(any())).thenReturn(parkingRecordEntity);
+		when(parkingRecordConverter.convert(parkingRecordEntity)).thenReturn(new ParkingRecordDomain());
+
+		// Act
+		try {
+			parkingRecordRegistered = iParkingEntranceService.registerParkingEntry(parkingRecordDomain);
+
+		} catch (AplicationException e) {
+			fail();
+		}
+
+		// Assert
+		assertTrue(parkingRecordRegistered != null);
 	}
 
 }

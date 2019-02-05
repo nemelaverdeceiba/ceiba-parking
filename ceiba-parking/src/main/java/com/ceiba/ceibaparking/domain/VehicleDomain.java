@@ -26,6 +26,13 @@ public class VehicleDomain {
 
 	/**
 	 * @author nelson.laverde
+	 * @date Feb 2, 2019
+	 */
+	public VehicleDomain() {
+	}
+
+	/**
+	 * @author nelson.laverde
 	 * @date Jan 29, 2019
 	 * @param licensePlate
 	 * @param cubicCentimeters

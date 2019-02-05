@@ -48,6 +48,14 @@ public class ParkingRecordDomain {
 	}
 
 	/**
+	 * 
+	 * @author nelson.laverde
+	 * @date Feb 2, 2019
+	 */
+	public ParkingRecordDomain() {
+	}
+
+	/**
 	 * @author nelson.laverde
 	 * @date Jan 29, 2019
 	 * @return the entryDate

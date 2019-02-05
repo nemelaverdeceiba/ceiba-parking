@@ -124,5 +124,5 @@ public class VehicleEntity {
 	public void setVehicleType(VehicleTypeEnum vehicleType) {
 		this.vehicleType = vehicleType;
 	}
-
+	
 }

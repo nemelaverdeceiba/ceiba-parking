@@ -40,37 +40,37 @@ public final class GeneralConstans {
 	/**
 	 * Valor de la hora de parqueo tipo carro.
 	 */
-	public static final Integer VALUE_HOUR_CAR = 1000;
+	public static final int VALUE_HOUR_CAR = 1000;
 	/**
 	 * Valor de la hora de parqueo tipo motocicleta.
 	 */
-	public static final Integer VALUE_HOUR_MOTORCYCLE = 500;
+	public static final int VALUE_HOUR_MOTORCYCLE = 500;
 	/**
 	 * Valor del d�a de parqueo tipo carro.
 	 */
-	public static final Integer VALUE_DAY_CAR = 8000;
+	public static final int VALUE_DAY_CAR = 8000;
 	/**
 	 * Valor del d�a de parqueo tipo motocicleta.
 	 */
-	public static final Integer VALUE_DAY_MOTORCYCLE = 4000;
+	public static final int VALUE_DAY_MOTORCYCLE = 4000;
 
 	/**
 	 * Cilidraje moto con costo adicional.
 	 */
-	public static final Integer MAX_MOTORCYCLE_CUBIC_CENTIMETERS = 500;
+	public static final int MAX_MOTORCYCLE_CUBIC_CENTIMETERS = 500;
 
 	/**
 	 * Valor adicional a pagar por superar el cilindraje de moto.
 	 */
-	public static final Integer ADITIONAL_VALUE_BY_MAX_MOTORCYCLE_CUBIC_CENTIMETERS = 2000;
+	public static final int ADITIONAL_VALUE_BY_MAX_MOTORCYCLE_CUBIC_CENTIMETERS = 2000;
 
 	/**
 	 * Hora minima para empezar a contar como d�a.
 	 */
-	public static final Integer INITIAL_HOUR_TO_DAY_PARKING = 9;
+	public static final int INITIAL_HOUR_TO_DAY_PARKING = 9;
 	/**
 	 * Hora maxima que cuenta como terminado el d�a de parqueo.
 	 */
-	public static final Integer FINAL_HOUR_TO_DAY_PARKING = 24;
+	public static final int FINAL_HOUR_TO_DAY_PARKING = 24;
 
 }

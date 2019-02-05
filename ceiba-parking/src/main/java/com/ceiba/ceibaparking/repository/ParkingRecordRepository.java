@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.ceiba.ceibaparking.entity.ParkingRecordEntity;
+import com.ceiba.ceibaparking.entity.VehicleEntity;
 import com.ceiba.ceibaparking.entity.VehicleTypeEnum;
 
 /**
@@ -32,5 +33,16 @@ public interface ParkingRecordRepository extends JpaRepository<ParkingRecordEnti
 	 */
 	@Query(value = "SELECT p FROM ParkingRecord p JOIN p.vehicle v WHERE p.outDate IS NULL")
 	List<ParkingRecordEntity> listParkedRecords();
+
+	/**
+	 * Permite obtener el registro de parqueo sin salida del vehiculo.
+	 * 
+	 * @author nelson.laverde
+	 * @date Feb 3, 2019
+	 * @param vehicle
+	 * @return
+	 */
+	@Query(value = "SELECT p FROM ParkingRecord p JOIN p.vehicle v WHERE (p.outDate IS NULL) AND (v = :vehicle)")
+	ParkingRecordEntity findActiveRegistryByVehicle(@Param("vehicle") VehicleEntity vehicle);
 
 }

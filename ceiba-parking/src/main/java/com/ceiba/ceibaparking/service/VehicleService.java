@@ -3,7 +3,7 @@ package com.ceiba.ceibaparking.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ceiba.ceibaparking.builder.VehicleBuilder;
+import com.ceiba.ceibaparking.converter.VehicleDomainConverter;
 import com.ceiba.ceibaparking.domain.VehicleDomain;
 import com.ceiba.ceibaparking.entity.VehicleEntity;
 import com.ceiba.ceibaparking.iservice.IVehicleService;
@@ -24,6 +24,9 @@ public class VehicleService implements IVehicleService {
 	@Autowired
 	private VehicleRepository vehicleRepository;
 
+	@Autowired
+	private VehicleDomainConverter vehicleDomainConverter;
+
 	/**
 	 * @author nelson.laverde
 	 * @date Jan 30, 2019
@@ -36,9 +39,10 @@ public class VehicleService implements IVehicleService {
 	 * @date Jan 29, 2019
 	 * @param vehicleRepository
 	 */
-	public VehicleService(VehicleRepository vehicleRepository) {
+	public VehicleService(VehicleRepository vehicleRepository, VehicleDomainConverter vehicleDomainConverter) {
 		super();
 		this.vehicleRepository = vehicleRepository;
+		this.vehicleDomainConverter = vehicleDomainConverter;
 	}
 
 	/**
@@ -65,7 +69,7 @@ public class VehicleService implements IVehicleService {
 	 */
 	@Override
 	public VehicleEntity insertVehicle(VehicleDomain vehicleDomain) {
-		return vehicleRepository.save(VehicleBuilder.convertToEntity(vehicleDomain));
+		return vehicleRepository.save(vehicleDomainConverter.convert(vehicleDomain));
 	}
 
 }

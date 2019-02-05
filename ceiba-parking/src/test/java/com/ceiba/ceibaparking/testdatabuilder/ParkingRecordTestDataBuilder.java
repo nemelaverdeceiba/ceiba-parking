@@ -15,7 +15,6 @@ import com.ceiba.ceibaparking.domain.VehicleDomain;
  */
 public class ParkingRecordTestDataBuilder {
 
-	private static final Date ENTRY_DATE = Calendar.getInstance().getTime();
 	private static final double BILL_VALUE = 0;
 
 	/**
@@ -45,7 +44,7 @@ public class ParkingRecordTestDataBuilder {
 	 * @date Jan 29, 2019
 	 */
 	public ParkingRecordTestDataBuilder() {
-		this.entryDate = ENTRY_DATE;
+		this.entryDate = Calendar.getInstance().getTime();
 		this.outDate = null;
 		this.billValue = BILL_VALUE;
 

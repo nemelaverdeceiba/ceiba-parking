@@ -6,8 +6,9 @@ import java.util.Arrays;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.ceiba.ceibaparking.builder.ParkingRecordBuilder;
 import com.ceiba.ceibaparking.constans.GeneralConstans;
+import com.ceiba.ceibaparking.converter.ParkingRecordConverter;
+import com.ceiba.ceibaparking.converter.ParkingRecordDomainConverter;
 import com.ceiba.ceibaparking.domain.ParkingRecordDomain;
 import com.ceiba.ceibaparking.entity.ParkingRecordEntity;
 import com.ceiba.ceibaparking.entity.VehicleEntity;
@@ -41,9 +42,14 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	@Autowired
 	private IVehicleService vehicleService;
 
-	
-	  @Autowired private DateUtil dateUtil;
-	 
+	@Autowired
+	private DateUtil dateUtil;
+
+	@Autowired
+	private ParkingRecordDomainConverter parkingRecordDomainConverter;
+
+	@Autowired
+	private ParkingRecordConverter parkingRecordConverter;
 
 	/**
 	 * Excepci�n cuando no ahi disponibilidad de parqueaderos.
@@ -53,6 +59,11 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 * 
 	 */
 	public static final String NO_AVAILABLE_PARKING_BY_LICENSE_PLATE_LETTER_A = "No esta autorizado para ingresar debido a que las placas que inician con la letra A solo pueden ingresar los domingos y lunes.";
+
+	/**
+	 * El vehiculo ya presenta registro de entrada al parqueadero.
+	 */
+	public static final String VEHICLE_WITH_PARKING_RECORD_ENTRANCE = "No es posible realizar la petición.El vehiculo ya se encuentra con registro de entrada en el parqueadero.";
 
 	/**
 	 * @author nelson.laverde
@@ -67,12 +78,17 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 * @param parkingRecordRepository
 	 * @param vehicleService
 	 */
-	
-	  public ParkingEntranceService(ParkingRecordRepository
-	  parkingRecordRepository, IVehicleService vehicleService, DateUtil dateUtil) {
-	  super(); this.parkingRecordRepository = parkingRecordRepository;
-	  this.vehicleService = vehicleService; this.dateUtil = dateUtil; }
-	 
+
+	public ParkingEntranceService(ParkingRecordRepository parkingRecordRepository, IVehicleService vehicleService,
+			DateUtil dateUtil, ParkingRecordDomainConverter parkingRecordDomainConverter,
+			ParkingRecordConverter parkingRecordConverter) {
+		super();
+		this.parkingRecordRepository = parkingRecordRepository;
+		this.vehicleService = vehicleService;
+		this.dateUtil = dateUtil;
+		this.parkingRecordDomainConverter = parkingRecordDomainConverter;
+		this.parkingRecordConverter = parkingRecordConverter;
+	}
 
 	/**
 	 * Permite validar la disponibilidad de puestos de parqueo.
@@ -81,7 +97,7 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 * @date Jan 29, 2019
 	 * @return
 	 */
-	public boolean validateAvailabilityParking(VehicleTypeEnum vehicleType) {
+	private boolean validateAvailabilityParking(VehicleTypeEnum vehicleType) {
 
 		boolean availablePark = true;
 		int countParkedVehicles = parkingRecordRepository.countBusyParkingByVehicleType(vehicleType).intValue();
@@ -104,7 +120,7 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 * @date Jan 29, 2019
 	 * @return
 	 */
-	public boolean validateDayByLicensePlate(String licensePlate) {
+	private boolean validateDayByLicensePlate(String licensePlate) {
 
 		boolean isValidDay = true;
 		if (licensePlate.toUpperCase().startsWith(GeneralConstans.LETTER_A)) {
@@ -124,8 +140,7 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 */
 	private boolean isAvailableDayToParkByLetterA() {
 		boolean isAvailable = false;
-		// LocalDateTime calendar = dateUtil.getActualDate();
-		LocalDateTime calendar = LocalDateTime.now();
+		LocalDateTime calendar = dateUtil.getActualDate();
 		Integer dayOfWeek = calendar.getDayOfWeek().getValue();
 		if (Arrays.asList(GeneralConstans.AVAILABLE_DAYS_TO_PARK_WITH_LETTER_A).contains(dayOfWeek)) {
 			isAvailable = true;
@@ -142,7 +157,19 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	 * @return
 	 */
 	@Override
-	public boolean registerParkingEntry(ParkingRecordDomain parkingRecord) throws AplicationException {
+	public ParkingRecordDomain registerParkingEntry(ParkingRecordDomain parkingRecord) throws AplicationException {
+
+		VehicleEntity vehicleEntity = vehicleService
+				.findVehicleByLicensePlate(parkingRecord.getVehicle().getLicensePlate());
+		if (vehicleEntity == null) {
+			vehicleEntity = vehicleService.insertVehicle(parkingRecord.getVehicle());
+
+		}
+
+		// Validación sin registro de salida.
+		if (parkingRecordRepository.findActiveRegistryByVehicle(vehicleEntity) != null) {
+			throw new AplicationException(VEHICLE_WITH_PARKING_RECORD_ENTRANCE);
+		}
 
 		// Validaci�n disponibilidad.
 		VehicleTypeEnum vehicleType = VehicleTypeEnum.valueOf(parkingRecord.getVehicle().getVehicleType());
@@ -155,15 +182,11 @@ public class ParkingEntranceService implements IParkingEntranceService {
 			throw new AplicationException(NO_AVAILABLE_PARKING_BY_LICENSE_PLATE_LETTER_A);
 		}
 
-		VehicleEntity vehicleEntity = vehicleService
-				.findVehicleByLicensePlate(parkingRecord.getVehicle().getLicensePlate());
-		if (vehicleEntity == null) {
-			vehicleEntity = vehicleService.insertVehicle(parkingRecord.getVehicle());
-
-		}
-		ParkingRecordEntity parkingRecordEntity = ParkingRecordBuilder.convertirToEntity(parkingRecord);
+		ParkingRecordEntity parkingRecordEntity = parkingRecordDomainConverter.convert(parkingRecord);
 		parkingRecordEntity.setVehicleEntity(vehicleEntity);
 
-		return parkingRecordRepository.save(parkingRecordEntity) != null;
+		parkingRecordEntity = parkingRecordRepository.save(parkingRecordEntity);
+
+		return parkingRecordConverter.convert(parkingRecordEntity);
 	}
 }

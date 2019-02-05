@@ -19,5 +19,5 @@ public interface IParkingEntranceService {
 	 * @param parkingRecord
 	 * @return
 	 */
-	public boolean registerParkingEntry(ParkingRecordDomain parkingRecord) throws AplicationException;
+	public ParkingRecordDomain registerParkingEntry(ParkingRecordDomain parkingRecord) throws AplicationException;
 }
