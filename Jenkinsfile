@@ -78,6 +78,15 @@ pipeline {
 		 			sh 'gradle --b ./build.gradle build -x test'
 	 			}
 		}
+		 
+		 
+		 stage('execute script') {
+	 		steps {
+		 			cd path/to/test/reports
+					touch *.xml
+	 			}
+		}
+		 
 	 }
 	 
 	 post {
