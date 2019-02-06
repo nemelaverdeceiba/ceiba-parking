@@ -34,7 +34,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 @TestPropertySource(locations = "classpath:application.properties")
 public class ParkingSearchIntegrationTest {
 	/**
-	 * Contexto de la aplicaciÃ³n.
+	 * Contexto de la aplicación.
 	 */
 	@Autowired
 	private MockMvc mvc;

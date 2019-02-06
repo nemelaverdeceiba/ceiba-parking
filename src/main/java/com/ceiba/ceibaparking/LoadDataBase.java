@@ -106,14 +106,6 @@ public class LoadDataBase {
 			parkingRecordEntity.setBillValue(0.0);
 			parkingRecordRepository.save(parkingRecordEntity);
 
-			vehicle = new VehicleEntity("NDF39K", 150, VehicleTypeEnum.MOTORBYKE);
-			vehicleRepository.save(vehicle);
-			parkingRecordEntity = new ParkingRecordEntity();
-			parkingRecordEntity.setVehicleEntity(vehicle);
-			parkingRecordEntity.setEntryDate(actualDate);
-			parkingRecordEntity.setBillValue(0.0);
-			parkingRecordRepository.save(parkingRecordEntity);
-
 		};
 	}
 

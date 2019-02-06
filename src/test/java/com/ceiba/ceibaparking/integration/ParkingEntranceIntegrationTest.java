@@ -26,7 +26,7 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Prueba de integraciÃ³n de la funcionalidad registro de parqueo.
+ * Prueba de integración de la funcionalidad registro de parqueo.
  * 
  * @author nelson.laverde
  * @date Feb 5, 2019

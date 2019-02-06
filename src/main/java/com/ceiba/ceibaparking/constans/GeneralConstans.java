@@ -65,7 +65,7 @@ public final class GeneralConstans {
 	public static final int ADITIONAL_VALUE_BY_MAX_MOTORCYCLE_CUBIC_CENTIMETERS = 2000;
 
 	/**
-	 * Hora minima para empezar a contar como dï¿½a.
+	 * Hora minima para empezar a contar como día.
 	 */
 	public static final int INITIAL_HOUR_TO_DAY_PARKING = 9;
 	/**
