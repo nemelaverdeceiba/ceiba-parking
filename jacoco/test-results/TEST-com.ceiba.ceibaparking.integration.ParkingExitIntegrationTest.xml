@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.ceibaparking.integration.ParkingExitIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-02-06T02:36:27" hostname="NELSON-MEJIA" time="0.09">
+  <properties/>
+  <testcase name="successRegisterParkingExit" classname="com.ceiba.ceibaparking.integration.ParkingExitIntegrationTest" time="0.09"/>
+  <system-out><![CDATA[2019-02-05 21:36:27.727  INFO 9816 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.ceiba.ceibaparking.integration.ParkingExitIntegrationTest], using SpringBootContextLoader
+2019-02-05 21:36:27.727  INFO 9816 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.ceibaparking.integration.ParkingExitIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-05 21:36:27.727  INFO 9816 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.ceiba.ceibaparking.integration.ParkingExitIntegrationTest]: ParkingExitIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-05 21:36:27.731  INFO 9816 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.ceiba.ceibaparking.CeibaParkingApplication for test class com.ceiba.ceibaparking.integration.ParkingExitIntegrationTest
+2019-02-05 21:36:27.732  INFO 9816 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-05 21:36:27.733  INFO 9816 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@df08198, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@916712a, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@414d1550, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@49133927, org.springframework.test.context.support.DirtiesContextTestExecutionListener@40e68ddc, org.springframework.test.context.transaction.TransactionalTestExecutionListener@7ac33bcb, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@538d5656, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@3878701, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@777b72c0, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@14851287, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@2d83c9a7, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@1283fc99]
+Hibernate: select vehicleent0_.id as id1_1_, vehicleent0_.cubic_centimeters as cubic_ce2_1_, vehicleent0_.license_plate as license_3_1_, vehicleent0_.vehicle_type as vehicle_4_1_ from vehicle vehicleent0_ where vehicleent0_.license_plate=?
+Hibernate: select parkingrec0_.id as id1_0_, parkingrec0_.bill_value as bill_val2_0_, parkingrec0_.entry_date as entry_da3_0_, parkingrec0_.out_date as out_date4_0_, parkingrec0_.vehicle_id as vehicle_5_0_ from parking_record parkingrec0_ inner join vehicle vehicleent1_ on parkingrec0_.vehicle_id=vehicleent1_.id where (parkingrec0_.out_date is null) and vehicleent1_.id=?
+Hibernate: update parking_record set bill_value=?, entry_date=?, out_date=?, vehicle_id=? where id=?
+
+MockHttpServletRequest:
+      HTTP Method = POST
+      Request URI = /parkingRecordService/registerParkingExit
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = {"entryDate":1549420587738,"outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"NDF39A","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}}
+    Session Attrs = {}
+
+Handler:
+             Type = com.ceiba.ceibaparking.controller.ParkingExitController
+           Method = public org.springframework.http.ResponseEntity<com.ceiba.ceibaparking.dto.ResponseDTO> com.ceiba.ceibaparking.controller.ParkingExitController.registerParkingExit(com.ceiba.ceibaparking.domain.ParkingRecordDomain)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+     Content type = application/json;charset=UTF-8
+             Body = {"responseCode":"00","responseMessage":"El proceso se realiz? de manera exitosa.","parkingRecordDomain":{"entryDate":"2019-02-03T02:36:27.204+0000","outDate":"2019-02-06T02:36:27.763+0000","billValue":12000.0,"vehicle":{"licensePlate":"NDF39A","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}}}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

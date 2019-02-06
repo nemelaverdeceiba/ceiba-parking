@@ -17,7 +17,7 @@ public final class ResponseConstants {
 	}
 
 	/**
-	 * CÃ³digo de respuesta exitosa.
+	 * Código de respuesta exitosa.
 	 */
 	public static final String SUCCESFULL_RESPONSE_CODE = "00";
 
@@ -29,6 +29,6 @@ public final class ResponseConstants {
 	/**
 	 * Mensaje de respuesta exitosa.
 	 */
-	public static final String SUCCESFULL_RESPONSE_MESSAGE = "El proceso se realizÃ³ de manera exitosa.";
+	public static final String SUCCESFULL_RESPONSE_MESSAGE = "El proceso se realizó de manera exitosa.";
 
 }

@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.ceibaparking.unit.ParkingSearchUnitTest" tests="2" skipped="0" failures="2" errors="0" timestamp="2019-02-06T02:36:37" hostname="NELSON-MEJIA" time="0.99">
+  <properties/>
+  <testcase name="successEmptyResult" classname="com.ceiba.ceibaparking.unit.ParkingSearchUnitTest" time="0.0">
+    <failure message="java.lang.IllegalStateException: Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:816)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 49 more
+Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [&quot;UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)&quot;; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:296)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:253)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:536)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:533)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:304)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy108.save(Unknown Source)
+	at com.ceiba.ceibaparking.LoadDataBase.lambda$runner$0(LoadDataBase.java:36)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	... 54 more
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:112)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:178)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3171)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3686)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1454)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:511)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3283)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2479)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:98)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532)
+	... 72 more
+Caused by: org.h2.jdbc.JdbcSQLException: Unique index or primary key violation: &quot;UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)&quot;; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.index.BaseIndex.getDuplicateKeyException(BaseIndex.java:101)
+	at org.h2.mvstore.db.MVSecondaryIndex.requireUnique(MVSecondaryIndex.java:236)
+	at org.h2.mvstore.db.MVSecondaryIndex.add(MVSecondaryIndex.java:202)
+	at org.h2.mvstore.db.MVTable.addRow(MVTable.java:732)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:182)
+	at org.h2.command.dml.Insert.update(Insert.java:134)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102)
+	at org.h2.command.Command.executeUpdate(Command.java:261)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:199)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:153)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175)
+	... 89 more
+</failure>
+  </testcase>
+  <testcase name="successNotEmptyResult" classname="com.ceiba.ceibaparking.unit.ParkingSearchUnitTest" time="0.001">
+    <failure message="java.lang.IllegalStateException: Failed to load ApplicationContext" type="java.lang.IllegalStateException">java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125)
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108)
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190)
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132)
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61)
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:816)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99)
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117)
+	... 49 more
+Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [&quot;UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)&quot;; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:296)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:253)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:536)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:533)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:304)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212)
+	at com.sun.proxy.$Proxy108.save(Unknown Source)
+	at com.ceiba.ceibaparking.LoadDataBase.lambda$runner$0(LoadDataBase.java:36)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	... 54 more
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:112)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:178)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3171)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3686)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1454)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:511)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3283)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2479)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:98)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532)
+	... 72 more
+Caused by: org.h2.jdbc.JdbcSQLException: Unique index or primary key violation: &quot;UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)&quot;; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.index.BaseIndex.getDuplicateKeyException(BaseIndex.java:101)
+	at org.h2.mvstore.db.MVSecondaryIndex.requireUnique(MVSecondaryIndex.java:236)
+	at org.h2.mvstore.db.MVSecondaryIndex.add(MVSecondaryIndex.java:202)
+	at org.h2.mvstore.db.MVTable.addRow(MVTable.java:732)
+	at org.h2.command.dml.Insert.insertRows(Insert.java:182)
+	at org.h2.command.dml.Insert.update(Insert.java:134)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102)
+	at org.h2.command.Command.executeUpdate(Command.java:261)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:199)
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:153)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175)
+	... 89 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[2019-02-05 21:36:36.712  INFO 9816 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.ceiba.ceibaparking.unit.ParkingSearchUnitTest], using SpringBootContextLoader
+2019-02-05 21:36:36.712  INFO 9816 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.ceibaparking.unit.ParkingSearchUnitTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-05 21:36:36.713  INFO 9816 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.ceiba.ceibaparking.unit.ParkingSearchUnitTest]: ParkingSearchUnitTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-05 21:36:36.715  INFO 9816 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.ceiba.ceibaparking.CeibaParkingApplication for test class com.ceiba.ceibaparking.unit.ParkingSearchUnitTest
+2019-02-05 21:36:36.716  INFO 9816 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-05 21:36:36.717  INFO 9816 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@218b54d, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@42f2ca2, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@54efd545, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@662469da, org.springframework.test.context.support.DirtiesContextTestExecutionListener@21d10a8e, org.springframework.test.context.transaction.TransactionalTestExecutionListener@5c66782a, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@7609db1e, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@332616bc, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1a0aff2c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@7542736f, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@4d2b97f2, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4e3bfb1d]
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.2.RELEASE)
+
+2019-02-05 21:36:36.748  INFO 9816 --- [    Test worker] c.c.c.unit.ParkingSearchUnitTest         : Starting ParkingSearchUnitTest on NELSON-MEJIA with PID 9816 (started by nelson.laverde in C:\Users\nelson.laverde\git2\ceiba-parking)
+2019-02-05 21:36:36.748  INFO 9816 --- [    Test worker] c.c.c.unit.ParkingSearchUnitTest         : No active profile set, falling back to default profiles: default
+2019-02-05 21:36:36.914  INFO 9816 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-05 21:36:36.945  INFO 9816 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31ms. Found 2 repository interfaces.
+2019-02-05 21:36:37.015  INFO 9816 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cab158a0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-05 21:36:37.092  INFO 9816 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2019-02-05 21:36:37.093  INFO 9816 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2019-02-05 21:36:37.120  INFO 9816 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-02-05 21:36:37.132  INFO 9816 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-02-05 21:36:37.211  INFO 9816 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-05 21:36:37.271  INFO 9816 --- [    Test worker] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-02-05 21:36:37.583  INFO 9816 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-05 21:36:37.593  WARN 9816 --- [    Test worker] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-02-05 21:36:37.878  INFO 9816 --- [    Test worker] c.c.c.unit.ParkingSearchUnitTest         : Started ParkingSearchUnitTest in 1.159 seconds (JVM running for 20.785)
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?)
+2019-02-05 21:36:37.884  WARN 9816 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23505, SQLState: 23505
+2019-02-05 21:36:37.884 ERROR 9816 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unique index or primary key violation: "UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)"; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]
+2019-02-05 21:36:37.884 ERROR 9816 --- [    Test worker] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2019-02-05 21:36:37.887  INFO 9816 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-02-05 21:36:37.890 ERROR 9816 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:816) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) [spring-boot-test-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) [gradle-testing-base-4.10.2.jar:4.10.2]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) [gradle-messaging-4.10.2.jar:4.10.2]
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) [na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117) [gradle-testing-base-4.10.2.jar:4.10.2]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) [gradle-base-services-4.10.2.jar:4.10.2]
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) [gradle-base-services-4.10.2.jar:4.10.2]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) [gradle-base-services-4.10.2.jar:4.10.2]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)"; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:296) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:253) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:536) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:533) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:304) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135) ~[spring-data-jpa-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at com.sun.proxy.$Proxy108.save(Unknown Source) ~[na:na]
+	at com.ceiba.ceibaparking.LoadDataBase.lambda$runner$0(LoadDataBase.java:36) ~[main/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	... 54 common frames omitted
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:112) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:178) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3171) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3686) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1454) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:511) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3283) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2479) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:98) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	... 72 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLException: Unique index or primary key violation: "UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)"; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.get(DbException.java:179) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.get(DbException.java:155) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.index.BaseIndex.getDuplicateKeyException(BaseIndex.java:101) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVSecondaryIndex.requireUnique(MVSecondaryIndex.java:236) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVSecondaryIndex.add(MVSecondaryIndex.java:202) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVTable.addRow(MVTable.java:732) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.dml.Insert.insertRows(Insert.java:182) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.dml.Insert.update(Insert.java:134) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.Command.executeUpdate(Command.java:261) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:199) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:153) ~[h2-1.4.197.jar:1.4.197]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	... 89 common frames omitted
+
+2019-02-05 21:36:37.892  INFO 9816 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-05 21:36:37.892  INFO 9816 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-02-05 21:36:37.893  INFO 9816 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2019-02-05 21:36:37.895  INFO 9816 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+2019-02-05 21:36:37.897 ERROR 9816 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@218b54d] to prepare test instance [com.ceiba.ceibaparking.unit.ParkingSearchUnitTest@12bf20c0]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) [gradle-testing-base-4.10.2.jar:4.10.2]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) [gradle-messaging-4.10.2.jar:4.10.2]
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) [na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117) [gradle-testing-base-4.10.2.jar:4.10.2]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) [gradle-base-services-4.10.2.jar:4.10.2]
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) [gradle-base-services-4.10.2.jar:4.10.2]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) [gradle-base-services-4.10.2.jar:4.10.2]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:816) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) ~[spring-boot-test-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	... 49 common frames omitted
+Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)"; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:296) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:253) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:536) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:533) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:304) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135) ~[spring-data-jpa-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at com.sun.proxy.$Proxy108.save(Unknown Source) ~[na:na]
+	at com.ceiba.ceibaparking.LoadDataBase.lambda$runner$0(LoadDataBase.java:36) ~[main/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	... 54 common frames omitted
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:112) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:178) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3171) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3686) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1454) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:511) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3283) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2479) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:98) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	... 72 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLException: Unique index or primary key violation: "UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)"; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.get(DbException.java:179) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.get(DbException.java:155) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.index.BaseIndex.getDuplicateKeyException(BaseIndex.java:101) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVSecondaryIndex.requireUnique(MVSecondaryIndex.java:236) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVSecondaryIndex.add(MVSecondaryIndex.java:202) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVTable.addRow(MVTable.java:732) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.dml.Insert.insertRows(Insert.java:182) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.dml.Insert.update(Insert.java:134) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.Command.executeUpdate(Command.java:261) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:199) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:153) ~[h2-1.4.197.jar:1.4.197]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	... 89 common frames omitted
+
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v2.1.2.RELEASE)
+
+2019-02-05 21:36:37.926  INFO 9816 --- [    Test worker] c.c.c.unit.ParkingSearchUnitTest         : Starting ParkingSearchUnitTest on NELSON-MEJIA with PID 9816 (started by nelson.laverde in C:\Users\nelson.laverde\git2\ceiba-parking)
+2019-02-05 21:36:37.926  INFO 9816 --- [    Test worker] c.c.c.unit.ParkingSearchUnitTest         : No active profile set, falling back to default profiles: default
+2019-02-05 21:36:38.073  INFO 9816 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-05 21:36:38.097  INFO 9816 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24ms. Found 2 repository interfaces.
+2019-02-05 21:36:38.152  INFO 9816 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cab158a0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-05 21:36:38.221  INFO 9816 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2019-02-05 21:36:38.222  INFO 9816 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2019-02-05 21:36:38.247  INFO 9816 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2019-02-05 21:36:38.256  INFO 9816 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-02-05 21:36:38.317  INFO 9816 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-05 21:36:38.364  INFO 9816 --- [    Test worker] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-02-05 21:36:38.652  INFO 9816 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-05 21:36:38.661  WARN 9816 --- [    Test worker] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-02-05 21:36:38.870  INFO 9816 --- [    Test worker] c.c.c.unit.ParkingSearchUnitTest         : Started ParkingSearchUnitTest in 0.968 seconds (JVM running for 21.777)
+Hibernate: call next value for hibernate_sequence
+Hibernate: insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?)
+2019-02-05 21:36:38.875  WARN 9816 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 23505, SQLState: 23505
+2019-02-05 21:36:38.875 ERROR 9816 --- [    Test worker] o.h.engine.jdbc.spi.SqlExceptionHelper   : Unique index or primary key violation: "UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)"; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]
+2019-02-05 21:36:38.875 ERROR 9816 --- [    Test worker] o.h.i.ExceptionMapperStandardImpl        : HHH000346: Error during managed flush [org.hibernate.exception.ConstraintViolationException: could not execute statement]
+2019-02-05 21:36:38.877  INFO 9816 --- [    Test worker] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-02-05 21:36:38.879 ERROR 9816 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:816) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) [spring-boot-test-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) [gradle-testing-base-4.10.2.jar:4.10.2]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) [gradle-messaging-4.10.2.jar:4.10.2]
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) [na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117) [gradle-testing-base-4.10.2.jar:4.10.2]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) [gradle-base-services-4.10.2.jar:4.10.2]
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) [gradle-base-services-4.10.2.jar:4.10.2]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) [gradle-base-services-4.10.2.jar:4.10.2]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)"; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:296) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:253) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:536) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:533) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:304) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135) ~[spring-data-jpa-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at com.sun.proxy.$Proxy108.save(Unknown Source) ~[na:na]
+	at com.ceiba.ceibaparking.LoadDataBase.lambda$runner$0(LoadDataBase.java:36) ~[main/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	... 54 common frames omitted
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:112) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:178) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3171) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3686) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1454) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:511) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3283) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2479) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:98) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	... 72 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLException: Unique index or primary key violation: "UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)"; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.get(DbException.java:179) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.get(DbException.java:155) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.index.BaseIndex.getDuplicateKeyException(BaseIndex.java:101) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVSecondaryIndex.requireUnique(MVSecondaryIndex.java:236) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVSecondaryIndex.add(MVSecondaryIndex.java:202) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVTable.addRow(MVTable.java:732) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.dml.Insert.insertRows(Insert.java:182) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.dml.Insert.update(Insert.java:134) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.Command.executeUpdate(Command.java:261) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:199) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:153) ~[h2-1.4.197.jar:1.4.197]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	... 89 common frames omitted
+
+2019-02-05 21:36:38.882  INFO 9816 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-02-05 21:36:38.882  INFO 9816 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2019-02-05 21:36:38.882  INFO 9816 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2019-02-05 21:36:38.885  INFO 9816 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+2019-02-05 21:36:38.887 ERROR 9816 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener@218b54d] to prepare test instance [com.ceiba.ceibaparking.unit.ParkingSearchUnitTest@c05f14c]
+
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:125) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:108) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.setUpRequestContextIfNecessary(ServletTestExecutionListener.java:190) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.web.ServletTestExecutionListener.prepareTestInstance(ServletTestExecutionListener.java:132) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:246) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:227) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:289) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:291) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:246) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:97) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit-4.12.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit-4.12.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:190) [spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:106) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:66) [gradle-testing-jvm-4.10.2.jar:4.10.2]
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51) [gradle-testing-base-4.10.2.jar:4.10.2]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93) [gradle-messaging-4.10.2.jar:4.10.2]
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source) [na:na]
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:117) [gradle-testing-base-4.10.2.jar:4.10.2]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_201]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_201]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_201]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_201]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:155) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:137) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404) [gradle-messaging-4.10.2.jar:4.10.2]
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63) [gradle-base-services-4.10.2.jar:4.10.2]
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46) [gradle-base-services-4.10.2.jar:4.10.2]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [na:1.8.0_201]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [na:1.8.0_201]
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55) [gradle-base-services-4.10.2.jar:4.10.2]
+	at java.lang.Thread.run(Thread.java:748) [na:1.8.0_201]
+Caused by: java.lang.IllegalStateException: Failed to execute CommandLineRunner
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:816) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:127) ~[spring-boot-test-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:99) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:117) ~[spring-test-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	... 49 common frames omitted
+Caused by: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint ["UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)"; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]]; nested exception is org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.convertHibernateAccessException(HibernateJpaDialect.java:296) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:253) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:536) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:746) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:714) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:533) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:304) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:135) ~[spring-data-jpa-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:93) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:61) ~[spring-data-commons-2.1.4.RELEASE.jar:2.1.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	at com.sun.proxy.$Proxy108.save(Unknown Source) ~[na:na]
+	at com.ceiba.ceibaparking.LoadDataBase.lambda$runner$0(LoadDataBase.java:36) ~[main/:na]
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813) ~[spring-boot-2.1.2.RELEASE.jar:2.1.2.RELEASE]
+	... 54 common frames omitted
+Caused by: org.hibernate.exception.ConstraintViolationException: could not execute statement
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:112) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:42) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:113) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:99) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:178) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3171) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3686) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:90) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:604) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:478) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:356) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1454) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:511) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:3283) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2479) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:473) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:178) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$300(JdbcResourceLocalTransactionCoordinatorImpl.java:39) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:271) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:98) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:532) ~[spring-orm-5.1.4.RELEASE.jar:5.1.4.RELEASE]
+	... 72 common frames omitted
+Caused by: org.h2.jdbc.JdbcSQLException: Unique index or primary key violation: "UK_J5V3SU3BDX4BVSK1T9DGA4BSQ_INDEX_3 ON PUBLIC.VEHICLE(LICENSE_PLATE) VALUES ('NDF39A', 1)"; SQL statement:
+insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?) [23505-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.get(DbException.java:179) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.message.DbException.get(DbException.java:155) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.index.BaseIndex.getDuplicateKeyException(BaseIndex.java:101) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVSecondaryIndex.requireUnique(MVSecondaryIndex.java:236) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVSecondaryIndex.add(MVSecondaryIndex.java:202) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.mvstore.db.MVTable.addRow(MVTable.java:732) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.dml.Insert.insertRows(Insert.java:182) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.dml.Insert.update(Insert.java:134) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.CommandContainer.update(CommandContainer.java:102) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.command.Command.executeUpdate(Command.java:261) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdateInternal(JdbcPreparedStatement.java:199) ~[h2-1.4.197.jar:1.4.197]
+	at org.h2.jdbc.JdbcPreparedStatement.executeUpdate(JdbcPreparedStatement.java:153) ~[h2-1.4.197.jar:1.4.197]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-3.2.0.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-3.2.0.jar:na]
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:175) ~[hibernate-core-5.3.7.Final.jar:5.3.7.Final]
+	... 89 common frames omitted
+
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

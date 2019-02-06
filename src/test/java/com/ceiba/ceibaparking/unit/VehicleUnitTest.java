@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import com.ceiba.ceibaparking.converter.VehicleDomainConverter;
@@ -25,6 +26,7 @@ import com.ceiba.ceibaparking.testdatabuilder.VehicleTestDataBuilder;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@ActiveProfiles("test")
 public class VehicleUnitTest {
 
 	// Contiene los métodos de base de datos de vehiculo.

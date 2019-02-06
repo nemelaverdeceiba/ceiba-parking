@@ -59,7 +59,7 @@ public class ParkingRecordConverter implements Converter<ParkingRecordEntity, Pa
 	 * @return
 	 */
 	public List<ParkingRecordDomain> convertListToParkingRecordDomain(List<ParkingRecordEntity> parkingRecordEntities) {
-		List<ParkingRecordDomain> parkingRecordDomains = new ArrayList<ParkingRecordDomain>();
+		List<ParkingRecordDomain> parkingRecordDomains = new ArrayList<>();
 		for (ParkingRecordEntity parkingRecordEntity : parkingRecordEntities) {
 			parkingRecordDomains.add(convert(parkingRecordEntity));
 		}

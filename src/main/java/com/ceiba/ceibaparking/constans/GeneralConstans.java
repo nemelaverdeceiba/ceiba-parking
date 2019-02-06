@@ -3,7 +3,7 @@ package com.ceiba.ceibaparking.constans;
 import java.time.DayOfWeek;
 
 /**
- * Constantes generales de la aplicaciï¿½n.
+ * Constantes generales de la aplicación.
  * 
  * @author nelson.laverde
  * @date Jan 29, 2019
@@ -32,7 +32,7 @@ public final class GeneralConstans {
 	 */
 	public static final String LETTER_A = "A";
 	/**
-	 * Valor nï¿½mericoS dias permitidos parquear con placa que inicia por la A.
+	 * Valor númericos dias permitidos parquear con placa que inicia por la A.
 	 */
 	public static final Integer[] AVAILABLE_DAYS_TO_PARK_WITH_LETTER_A = { DayOfWeek.MONDAY.getValue(),
 			DayOfWeek.SUNDAY.getValue() };
@@ -46,11 +46,11 @@ public final class GeneralConstans {
 	 */
 	public static final int VALUE_HOUR_MOTORCYCLE = 500;
 	/**
-	 * Valor del dï¿½a de parqueo tipo carro.
+	 * Valor del día de parqueo tipo carro.
 	 */
 	public static final int VALUE_DAY_CAR = 8000;
 	/**
-	 * Valor del dï¿½a de parqueo tipo motocicleta.
+	 * Valor del día de parqueo tipo motocicleta.
 	 */
 	public static final int VALUE_DAY_MOTORCYCLE = 4000;
 
@@ -69,7 +69,7 @@ public final class GeneralConstans {
 	 */
 	public static final int INITIAL_HOUR_TO_DAY_PARKING = 9;
 	/**
-	 * Hora maxima que cuenta como terminado el dï¿½a de parqueo.
+	 * Hora maxima que cuenta como terminado el día de parqueo.
 	 */
 	public static final int FINAL_HOUR_TO_DAY_PARKING = 24;
 

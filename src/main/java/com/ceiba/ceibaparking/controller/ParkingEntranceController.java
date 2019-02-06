@@ -1,7 +1,9 @@
 package com.ceiba.ceibaparking.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,22 +43,25 @@ public class ParkingEntranceController {
 	 */
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, path = "/registerParkingEntrance")
 	@ResponseBody
-	public ResponseDTO registerParkingEntrance(@RequestBody(required = true) ParkingRecordDomain parkingRecordDomain) {
+	public ResponseEntity<ResponseDTO> registerParkingEntrance(
+			@RequestBody(required = true) ParkingRecordDomain parkingRecordDomain) {
 
 		ResponseDTO responseDTO;
-
+		ResponseEntity<ResponseDTO> responseEntity = null;
 		try {
 
 			ParkingRecordDomain parkingRecordRegistered = parkingEntranceService
 					.registerParkingEntry(parkingRecordDomain);
 			responseDTO = new ParkingRecordOutDto(ResponseConstants.SUCCESFULL_RESPONSE_CODE,
 					ResponseConstants.SUCCESFULL_RESPONSE_MESSAGE, parkingRecordRegistered);
+			responseEntity = new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
 
 		} catch (Exception exception) {
 			responseDTO = new ParkingRecordOutDto(ResponseConstants.FAILED_RESPONSE_CODE, exception.getMessage(), null);
+			responseEntity = new ResponseEntity<>(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
-		return responseDTO;
+		return responseEntity;
 	}
 
 }

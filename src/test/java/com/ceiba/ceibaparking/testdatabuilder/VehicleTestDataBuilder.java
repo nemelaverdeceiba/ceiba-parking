@@ -2,10 +2,26 @@ package com.ceiba.ceibaparking.testdatabuilder;
 
 import com.ceiba.ceibaparking.domain.VehicleDomain;
 
+/**
+ * Creador de objetos vehiculo.
+ * 
+ * @author nelson.laverde
+ * @date Feb 5, 2019
+ *
+ */
 public class VehicleTestDataBuilder {
 
+	/*
+	 * Placa del vehiculo.
+	 */
 	private static final String LICENSE_PLATE = "NFD39D";
+	/**
+	 * Cilindraje del vehiculo.
+	 */
 	private static final int CUBIC_CENTIMETERS = 150;
+	/**
+	 * Tipo del vehiculo.
+	 */
 	private static final String VEHICLE_TYPE = "MOTORBYKE";
 
 	/**

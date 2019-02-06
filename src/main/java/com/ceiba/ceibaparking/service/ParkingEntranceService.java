@@ -63,7 +63,7 @@ public class ParkingEntranceService implements IParkingEntranceService {
 	/**
 	 * El vehiculo ya presenta registro de entrada al parqueadero.
 	 */
-	public static final String VEHICLE_WITH_PARKING_RECORD_ENTRANCE = "No es posible realizar la peticiÃ³n.El vehiculo ya se encuentra con registro de entrada en el parqueadero.";
+	public static final String VEHICLE_WITH_PARKING_RECORD_ENTRANCE = "No es posible realizar la petición.El vehiculo ya se encuentra con registro de entrada en el parqueadero.";
 
 	/**
 	 * @author nelson.laverde

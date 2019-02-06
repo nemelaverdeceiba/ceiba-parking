@@ -3,7 +3,9 @@ package com.ceiba.ceibaparking.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -42,19 +44,22 @@ public class ParkingSearchController {
 	 */
 	@GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE, path = "/searchParkingRecords")
 	@ResponseBody
-	public ResponseDTO searchActiveParkingRecords() {
+	public ResponseEntity<ResponseDTO> searchActiveParkingRecords() {
 
 		ResponseDTO responseDTO;
+		ResponseEntity<ResponseDTO> responseEntity = null;
 		try {
 
 			List<ParkingRecordDomain> listParkingRecords = parkingSearchService.listParkedRecords();
 			responseDTO = new ParkingSearchOutDto(ResponseConstants.SUCCESFULL_RESPONSE_CODE,
 					ResponseConstants.SUCCESFULL_RESPONSE_MESSAGE, listParkingRecords);
+			responseEntity = new ResponseEntity<>(responseDTO, HttpStatus.CREATED);
 
 		} catch (Exception exception) {
 			responseDTO = new ParkingRecordOutDto(ResponseConstants.FAILED_RESPONSE_CODE, exception.getMessage(), null);
+			responseEntity = new ResponseEntity<>(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 
-		return responseDTO;
+		return responseEntity;
 	}
 }
