@@ -1,4 +1,4 @@
-var app = angular.module('films', [ "ngResource" ]);
+var app = angular.module('ceiba-parking', [ ]);
 
 app.controller('FilmsController', [ '$scope', '$http',
                                      
