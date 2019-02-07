@@ -83,7 +83,7 @@ pipeline {
 		 
 	 }
 	 
-	 post {
+	 /*post {
 	 	always {
 	 		echo 'This will always run'
 		}
@@ -108,5 +108,20 @@ pipeline {
 	 		echo 'This will run only if the state of the Pipeline has changed'
 	 		echo 'For example, if the Pipeline was previously failing but is now successful'
 	 	}
-	 }
+	 }*/
+	
+	// Pasos posteriores
+	post {
+		// Ante fallo
+		failure {
+			echo 'This will run only if failed'
+			mail (to: 'nelson.laverde@ceiba.com.co', subject: "Failed Pipeline:${currentBuild.fullDisplayName}", 
+			      body: "Something is wrong with ${env.BUILD_URL}")
+		}
+		// Ante exito
+		success {
+			echo 'This will run only if successful'
+			junit '**/jacoco/test-results/*.xml'
+		}
+}
 }
