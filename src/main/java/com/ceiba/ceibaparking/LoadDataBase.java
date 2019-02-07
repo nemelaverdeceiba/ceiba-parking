@@ -28,85 +28,44 @@ public class LoadDataBase {
 	@Bean
 	CommandLineRunner runner(VehicleRepository vehicleRepository, ParkingRecordRepository parkingRecordRepository) {
 		return args -> {
-			VehicleEntity vehicle = null;
-			ParkingRecordEntity parkingRecordEntity = null;
-			Calendar calendar = Calendar.getInstance();
-			calendar.add(Calendar.DATE, -3);
-			Date actualDate = calendar.getTime();
-
-			vehicle = new VehicleEntity("NDF39A", 150, VehicleTypeEnum.MOTORBYKE);
-			vehicleRepository.save(vehicle);
-			parkingRecordEntity = new ParkingRecordEntity();
-			parkingRecordEntity.setVehicleEntity(vehicle);
-			parkingRecordEntity.setEntryDate(actualDate);
-			parkingRecordEntity.setBillValue(0.0);
-			parkingRecordRepository.save(parkingRecordEntity);
-
-			vehicle = new VehicleEntity("NDF39B", 150, VehicleTypeEnum.MOTORBYKE);
-			vehicleRepository.save(vehicle);
-			parkingRecordEntity = new ParkingRecordEntity();
-			parkingRecordEntity.setVehicleEntity(vehicle);
-			parkingRecordEntity.setEntryDate(actualDate);
-			parkingRecordEntity.setBillValue(0.0);
-			parkingRecordRepository.save(parkingRecordEntity);
-
-			vehicle = new VehicleEntity("NDF39C", 150, VehicleTypeEnum.MOTORBYKE);
-			vehicleRepository.save(vehicle);
-			parkingRecordEntity = new ParkingRecordEntity();
-			parkingRecordEntity.setVehicleEntity(vehicle);
-			parkingRecordEntity.setEntryDate(actualDate);
-			parkingRecordEntity.setBillValue(0.0);
-			parkingRecordRepository.save(parkingRecordEntity);
-
-			vehicle = new VehicleEntity("NDF39D", 150, VehicleTypeEnum.MOTORBYKE);
-			vehicleRepository.save(vehicle);
-			parkingRecordEntity = new ParkingRecordEntity();
-			parkingRecordEntity.setVehicleEntity(vehicle);
-			parkingRecordEntity.setEntryDate(actualDate);
-			parkingRecordEntity.setBillValue(0.0);
-			parkingRecordRepository.save(parkingRecordEntity);
-
-			vehicle = new VehicleEntity("NDF39E", 150, VehicleTypeEnum.MOTORBYKE);
-			vehicleRepository.save(vehicle);
-			parkingRecordEntity = new ParkingRecordEntity();
-			parkingRecordEntity.setVehicleEntity(vehicle);
-			parkingRecordEntity.setEntryDate(actualDate);
-			parkingRecordEntity.setBillValue(0.0);
-			parkingRecordRepository.save(parkingRecordEntity);
-
-			vehicle = new VehicleEntity("NDF39F", 150, VehicleTypeEnum.MOTORBYKE);
-			vehicleRepository.save(vehicle);
-			parkingRecordEntity = new ParkingRecordEntity();
-			parkingRecordEntity.setVehicleEntity(vehicle);
-			parkingRecordEntity.setEntryDate(actualDate);
-			parkingRecordEntity.setBillValue(0.0);
-			parkingRecordRepository.save(parkingRecordEntity);
-
-			vehicle = new VehicleEntity("NDF39G", 150, VehicleTypeEnum.MOTORBYKE);
-			vehicleRepository.save(vehicle);
-			parkingRecordEntity = new ParkingRecordEntity();
-			parkingRecordEntity.setVehicleEntity(vehicle);
-			parkingRecordEntity.setEntryDate(actualDate);
-			parkingRecordEntity.setBillValue(0.0);
-			parkingRecordRepository.save(parkingRecordEntity);
-
-			vehicle = new VehicleEntity("NDF39H", 150, VehicleTypeEnum.MOTORBYKE);
-			vehicleRepository.save(vehicle);
-			parkingRecordEntity = new ParkingRecordEntity();
-			parkingRecordEntity.setVehicleEntity(vehicle);
-			parkingRecordEntity.setEntryDate(actualDate);
-			parkingRecordEntity.setBillValue(0.0);
-			parkingRecordRepository.save(parkingRecordEntity);
-
-			vehicle = new VehicleEntity("NDF39I", 150, VehicleTypeEnum.MOTORBYKE);
-			vehicleRepository.save(vehicle);
-			parkingRecordEntity = new ParkingRecordEntity();
-			parkingRecordEntity.setVehicleEntity(vehicle);
-			parkingRecordEntity.setEntryDate(actualDate);
-			parkingRecordEntity.setBillValue(0.0);
-			parkingRecordRepository.save(parkingRecordEntity);
+			
+			insertParkingRecord(vehicleRepository, parkingRecordRepository, "NDF39A");
+			insertParkingRecord(vehicleRepository, parkingRecordRepository, "NDF39B");
+			insertParkingRecord(vehicleRepository, parkingRecordRepository, "NDF39C");
+			insertParkingRecord(vehicleRepository, parkingRecordRepository, "NDF39D");
+			insertParkingRecord(vehicleRepository, parkingRecordRepository, "NDF39E");
+			insertParkingRecord(vehicleRepository, parkingRecordRepository, "NDF39F");
+			insertParkingRecord(vehicleRepository, parkingRecordRepository, "NDF39G");
+			insertParkingRecord(vehicleRepository, parkingRecordRepository, "NDF39H");
+			insertParkingRecord(vehicleRepository, parkingRecordRepository, "NDF39I");
 
 		};
+	}
+
+	/**
+	 * Permite precargar registros en base de datos.
+	 * 
+	 * @author nelson.laverde
+	 * @date Feb 7, 2019
+	 * @param vehicleRepository
+	 * @param parkingRecordRepository
+	 * @param licensePlate
+	 */
+	public void insertParkingRecord(VehicleRepository vehicleRepository,
+			ParkingRecordRepository parkingRecordRepository, String licensePlate) {
+		VehicleEntity vehicle = null;
+		ParkingRecordEntity parkingRecordEntity = null;
+		Calendar calendar = Calendar.getInstance();
+		calendar.add(Calendar.DATE, -3);
+		Date actualDate = calendar.getTime();
+
+		vehicle = new VehicleEntity(licensePlate, 150, VehicleTypeEnum.MOTORBYKE);
+		vehicleRepository.save(vehicle);
+		parkingRecordEntity = new ParkingRecordEntity();
+		parkingRecordEntity.setVehicleEntity(vehicle);
+		parkingRecordEntity.setEntryDate(actualDate);
+		parkingRecordEntity.setBillValue(0.0);
+		parkingRecordRepository.save(parkingRecordEntity);
 	}
 
 }
