@@ -62,7 +62,7 @@ public class VehicleSearchController {
 
 		} catch (Exception exception) {
 			responseDTO = new ParkingRecordOutDto(ResponseConstants.FAILED_RESPONSE_CODE, exception.getMessage(), null);
-			LOGGER.error(exception.getMessage());
+			LOGGER.error(exception);
 		}
 
 		return responseDTO;

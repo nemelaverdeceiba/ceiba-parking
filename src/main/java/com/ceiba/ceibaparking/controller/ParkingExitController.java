@@ -57,7 +57,7 @@ public class ParkingExitController {
 		} catch (Exception exception) {
 			responseDTO = new ParkingRecordOutDto(ResponseConstants.FAILED_RESPONSE_CODE, exception.getMessage(), null);
 			responseEntity = new ResponseEntity<>(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
-			LOGGER.error(exception.getMessage());
+			LOGGER.error(exception);
 		}
 
 		return responseEntity;
