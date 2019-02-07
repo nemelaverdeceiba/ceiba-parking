@@ -1,7 +1,7 @@
 package com.ceiba.ceibaparking.exception;
 
 /**
- * Excepciï¿½n arrojada en la aplicaciï¿½n.
+ * Excepción arrojada en la aplicación.
  * @author nelson.laverde
  * @date   Jan 29, 2019
  *

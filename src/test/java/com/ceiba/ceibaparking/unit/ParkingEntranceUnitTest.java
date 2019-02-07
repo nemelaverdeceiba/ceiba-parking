@@ -161,7 +161,7 @@ public class ParkingEntranceUnitTest {
 	}
 
 	/**
-	 * Prueba unitaria de fallo con placa que inicia por letra A y en un dÃ­a que no
+	 * Prueba unitaria de fallo con placa que inicia por letra A y en un día que no
 	 * es domingo ni lunes.
 	 */
 	@Test

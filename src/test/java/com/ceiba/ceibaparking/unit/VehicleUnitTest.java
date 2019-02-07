@@ -71,10 +71,5 @@ public class VehicleUnitTest {
 		assertTrue(vehicleEntity != null);
 
 	}
-	
-	@Test
-	public void test1() {
-		assertTrue(true);
-	}
 
 }

@@ -31,4 +31,10 @@ public final class ResponseConstants {
 	 */
 	public static final String SUCCESFULL_RESPONSE_MESSAGE = "El proceso se realizó de manera exitosa.";
 
+	/**
+	 * Excepción cuando no es permitido parquear por que la placa inicia con letra A
+	 * y no es domingo ni lunes.
+	 */
+	public static final String FAILED_NO_AVAILABLE_PARKING_BY_LICENSE_PLATE_LETTER_A = "No esta autorizado para ingresar debido a que las placas que inician con la letra A solo pueden ingresar los domingos y lunes.";
+
 }
