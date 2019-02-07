@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.ceiba.ceibaparking.integration.ParkingSearchIntegrationTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-02-07T04:01:50" hostname="NELSON-MEJIA" time="0.031">
+  <properties/>
+  <testcase name="successSearchParkingRecords" classname="com.ceiba.ceibaparking.integration.ParkingSearchIntegrationTest" time="0.031"/>
+  <system-out><![CDATA[2019-02-06 23:01:50.802  INFO 5812 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.ceiba.ceibaparking.integration.ParkingSearchIntegrationTest], using SpringBootContextLoader
+2019-02-06 23:01:50.803  INFO 5812 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.ceibaparking.integration.ParkingSearchIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-06 23:01:50.803  INFO 5812 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.ceiba.ceibaparking.integration.ParkingSearchIntegrationTest]: ParkingSearchIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-06 23:01:50.805  INFO 5812 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.ceiba.ceibaparking.CeibaParkingApplication for test class com.ceiba.ceibaparking.integration.ParkingSearchIntegrationTest
+2019-02-06 23:01:50.806  INFO 5812 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-06 23:01:50.807  INFO 5812 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@1a8058a3, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@29fc08e5, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@1a2be696, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@13d7daa8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@b0add31, org.springframework.test.context.transaction.TransactionalTestExecutionListener@42785795, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@722161a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@2a8d8ecc, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@77b32df9, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@77f71865, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@60725247, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@264f5b6b]
+Hibernate: select parkingrec0_.id as id1_0_, parkingrec0_.bill_value as bill_val2_0_, parkingrec0_.entry_date as entry_da3_0_, parkingrec0_.out_date as out_date4_0_, parkingrec0_.vehicle_id as vehicle_5_0_ from parking_record parkingrec0_ inner join vehicle vehicleent1_ on parkingrec0_.vehicle_id=vehicleent1_.id where parkingrec0_.out_date is null
+Hibernate: select vehicleent0_.id as id1_1_0_, vehicleent0_.cubic_centimeters as cubic_ce2_1_0_, vehicleent0_.license_plate as license_3_1_0_, vehicleent0_.vehicle_type as vehicle_4_1_0_ from vehicle vehicleent0_ where vehicleent0_.id=?
+Hibernate: select vehicleent0_.id as id1_1_0_, vehicleent0_.cubic_centimeters as cubic_ce2_1_0_, vehicleent0_.license_plate as license_3_1_0_, vehicleent0_.vehicle_type as vehicle_4_1_0_ from vehicle vehicleent0_ where vehicleent0_.id=?
+Hibernate: select vehicleent0_.id as id1_1_0_, vehicleent0_.cubic_centimeters as cubic_ce2_1_0_, vehicleent0_.license_plate as license_3_1_0_, vehicleent0_.vehicle_type as vehicle_4_1_0_ from vehicle vehicleent0_ where vehicleent0_.id=?
+Hibernate: select vehicleent0_.id as id1_1_0_, vehicleent0_.cubic_centimeters as cubic_ce2_1_0_, vehicleent0_.license_plate as license_3_1_0_, vehicleent0_.vehicle_type as vehicle_4_1_0_ from vehicle vehicleent0_ where vehicleent0_.id=?
+Hibernate: select vehicleent0_.id as id1_1_0_, vehicleent0_.cubic_centimeters as cubic_ce2_1_0_, vehicleent0_.license_plate as license_3_1_0_, vehicleent0_.vehicle_type as vehicle_4_1_0_ from vehicle vehicleent0_ where vehicleent0_.id=?
+Hibernate: select vehicleent0_.id as id1_1_0_, vehicleent0_.cubic_centimeters as cubic_ce2_1_0_, vehicleent0_.license_plate as license_3_1_0_, vehicleent0_.vehicle_type as vehicle_4_1_0_ from vehicle vehicleent0_ where vehicleent0_.id=?
+Hibernate: select vehicleent0_.id as id1_1_0_, vehicleent0_.cubic_centimeters as cubic_ce2_1_0_, vehicleent0_.license_plate as license_3_1_0_, vehicleent0_.vehicle_type as vehicle_4_1_0_ from vehicle vehicleent0_ where vehicleent0_.id=?
+Hibernate: select vehicleent0_.id as id1_1_0_, vehicleent0_.cubic_centimeters as cubic_ce2_1_0_, vehicleent0_.license_plate as license_3_1_0_, vehicleent0_.vehicle_type as vehicle_4_1_0_ from vehicle vehicleent0_ where vehicleent0_.id=?
+Hibernate: select vehicleent0_.id as id1_1_0_, vehicleent0_.cubic_centimeters as cubic_ce2_1_0_, vehicleent0_.license_plate as license_3_1_0_, vehicleent0_.vehicle_type as vehicle_4_1_0_ from vehicle vehicleent0_ where vehicleent0_.id=?
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /parkingRecordService/searchParkingRecords
+       Parameters = {}
+          Headers = [Content-Type:"application/json;charset=UTF-8"]
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = com.ceiba.ceibaparking.controller.ParkingSearchController
+           Method = public org.springframework.http.ResponseEntity<com.ceiba.ceibaparking.dto.ResponseDTO> com.ceiba.ceibaparking.controller.ParkingSearchController.searchActiveParkingRecords()
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 201
+    Error message = null
+          Headers = [Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0"]
+     Content type = application/json;charset=UTF-8
+             Body = {"responseCode":"00","responseMessage":"El proceso se realiz? de manera exitosa.","listParkinsRecords":[{"entryDate":"2019-02-07T04:01:48.718+0000","outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"JKL999","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}},{"entryDate":"2019-02-04T04:01:50.698+0000","outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"NDF39B","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}},{"entryDate":"2019-02-04T04:01:50.698+0000","outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"NDF39C","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}},{"entryDate":"2019-02-04T04:01:50.698+0000","outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"NDF39D","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}},{"entryDate":"2019-02-04T04:01:50.698+0000","outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"NDF39E","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}},{"entryDate":"2019-02-04T04:01:50.698+0000","outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"NDF39F","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}},{"entryDate":"2019-02-04T04:01:50.698+0000","outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"NDF39G","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}},{"entryDate":"2019-02-04T04:01:50.698+0000","outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"NDF39H","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}},{"entryDate":"2019-02-04T04:01:50.698+0000","outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"NDF39I","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}}]}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
