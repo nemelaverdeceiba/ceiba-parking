@@ -22,7 +22,7 @@ public final class ResponseConstants {
 	public static final String SUCCESFULL_RESPONSE_CODE = "00";
 
 	/**
-	 * CÃ³digo de respuesta fallida.
+	 * Código de respuesta fallida.
 	 */
 	public static final String FAILED_RESPONSE_CODE = "01";
 
