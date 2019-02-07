@@ -1,5 +1,7 @@
 package com.ceiba.ceibaparking.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,6 +36,18 @@ public class VehicleSearchController {
 	@Autowired
 	private VehicleService vehicleService;
 
+	/**
+	 * Logger.
+	 */
+	private static final Logger LOGGER = LogManager.getLogger(VehicleSearchController.class);
+
+	/**
+	 * 
+	 * @author nelson.laverde
+	 * @date Feb 7, 2019
+	 * @param licensePlate
+	 * @return
+	 */
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_UTF8_VALUE, produces = MediaType.APPLICATION_JSON_UTF8_VALUE, path = "/searchVehicle")
 	@ResponseBody
 	public ResponseDTO searchVehicle(@RequestBody(required = true) String licensePlate) {
@@ -41,14 +55,14 @@ public class VehicleSearchController {
 		ResponseDTO responseDTO;
 		try {
 			VehicleConverter vehicleConverter = new VehicleConverter();
-			VehicleEntity vehicleEntity=vehicleService.findVehicleByLicensePlate(licensePlate);
-			VehicleDomain vehicleDomain = vehicleConverter
-					.convert(vehicleEntity);
+			VehicleEntity vehicleEntity = vehicleService.findVehicleByLicensePlate(licensePlate);
+			VehicleDomain vehicleDomain = vehicleConverter.convert(vehicleEntity);
 			responseDTO = new VehicleSearchOutDto(ResponseConstants.SUCCESFULL_RESPONSE_CODE,
 					ResponseConstants.SUCCESFULL_RESPONSE_MESSAGE, vehicleDomain);
 
 		} catch (Exception exception) {
 			responseDTO = new ParkingRecordOutDto(ResponseConstants.FAILED_RESPONSE_CODE, exception.getMessage(), null);
+			LOGGER.error(exception.getMessage());
 		}
 
 		return responseDTO;

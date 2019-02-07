@@ -2,6 +2,8 @@ package com.ceiba.ceibaparking.controller;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -36,6 +38,11 @@ public class ParkingSearchController {
 	private ParkingSearchService parkingSearchService;
 
 	/**
+	 * Logger.
+	 */
+	private static final Logger LOGGER = LogManager.getLogger(ParkingSearchController.class);
+
+	/**
 	 * Servicio que permite realizar la búsqueda
 	 * 
 	 * @author nelson.laverde
@@ -58,6 +65,7 @@ public class ParkingSearchController {
 		} catch (Exception exception) {
 			responseDTO = new ParkingRecordOutDto(ResponseConstants.FAILED_RESPONSE_CODE, exception.getMessage(), null);
 			responseEntity = new ResponseEntity<>(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
+			LOGGER.error(exception.getMessage());
 		}
 
 		return responseEntity;

@@ -1,5 +1,7 @@
 package com.ceiba.ceibaparking.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -34,6 +36,11 @@ public class ParkingEntranceController {
 	private ParkingEntranceService parkingEntranceService;
 
 	/**
+	 * Logger.
+	 */
+	private static final Logger LOGGER = LogManager.getLogger(ParkingEntranceController.class);
+
+	/**
 	 * Servicio para registrar un registro de parqueo de un vehiculo.
 	 * 
 	 * @author nelson.laverde
@@ -59,6 +66,8 @@ public class ParkingEntranceController {
 		} catch (Exception exception) {
 			responseDTO = new ParkingRecordOutDto(ResponseConstants.FAILED_RESPONSE_CODE, exception.getMessage(), null);
 			responseEntity = new ResponseEntity<>(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
+
+			LOGGER.error(exception.getMessage());
 		}
 
 		return responseEntity;
