@@ -54,7 +54,7 @@ pipeline {
 					//j7unit '**/build/test-results/test/*.xml' //aggregate test results - JUnit
 					//step( [ $class: 'JacocoPublisher' ] )
 				       //// sh 'gradle --b ./build.gradle test'
-					sh 'gradle --b ./build.gradle cleanTest test'
+					sh 'gradle --b ./build.gradle clean test'
 	 			}
 	 	}
 	 
