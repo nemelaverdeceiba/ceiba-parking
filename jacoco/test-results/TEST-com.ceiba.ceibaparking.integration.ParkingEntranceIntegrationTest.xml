@@ -1,30 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-02-07T00:46:25" hostname="NELSON-MEJIA" time="0.499">
+<testsuite name="com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2019-02-07T04:01:48" hostname="NELSON-MEJIA" time="0.5">
   <properties/>
-  <testcase name="successRegisterParkingEntry" classname="com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest" time="0.473"/>
-  <testcase name="failedParkingByLicensePlateWithALetter" classname="com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest" time="0.025"/>
-  <system-out><![CDATA[19:46:17.007 [Test worker] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]
-19:46:17.021 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
-19:46:17.040 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
-19:46:17.098 [Test worker] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
-19:46:17.119 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest], using SpringBootContextLoader
-19:46:17.126 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]: class path resource [com/ceiba/ceibaparking/integration/ParkingEntranceIntegrationTest-context.xml] does not exist
-19:46:17.127 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]: class path resource [com/ceiba/ceibaparking/integration/ParkingEntranceIntegrationTestContext.groovy] does not exist
-19:46:17.127 [Test worker] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
-19:46:17.128 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]: ParkingEntranceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-19:46:17.383 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [C:\Users\nelson.laverde\git2\ceiba-parking\build\classes\java\main\com\ceiba\ceibaparking\CeibaParkingApplication.class]
-19:46:17.391 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.ceiba.ceibaparking.CeibaParkingApplication for test class com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest
-19:46:17.565 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]: using defaults.
-19:46:17.567 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
-19:46:17.606 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@646d0e2c, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@139198d9, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4ec4ac60, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1b87641d, org.springframework.test.context.support.DirtiesContextTestExecutionListener@1717052f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@8df0044, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@63131a93, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@43142d60, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6c856650, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@1c2886a4, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@6794d030, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@5099e8f]
-19:46:17.611 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]
-19:46:17.613 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]
-19:46:17.614 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]
-19:46:17.614 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]
-19:46:17.622 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@6181b076 testClass = ParkingEntranceIntegrationTest, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@44fb42ae testClass = ParkingEntranceIntegrationTest, locations = '{}', classes = '{class com.ceiba.ceibaparking.CeibaParkingApplication}', contextInitializerClasses = '[]', activeProfiles = '{test}', propertySourceLocations = '{classpath:application.properties}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@e7e8512, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1a4a5cf, [ImportsContextCustomizer@a272b key = [org.springframework.boot.test.autoconfigure.web.servlet.MockMvcAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcSecurityAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebClientAutoConfiguration, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcWebDriverAutoConfiguration]], org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@6006f13e, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@168cba42, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@3a52a8be], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]], attributes = map['org.springframework.test.context.web.ServletTestExecutionListener.activateListener' -> true]], class annotated with @DirtiesContext [false] with mode [null].
-19:46:17.624 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]
-19:46:17.624 [Test worker] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]
-19:46:17.692 [Test worker] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+  <testcase name="successRegisterParkingEntry" classname="com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest" time="0.469"/>
+  <testcase name="failedParkingByLicensePlateWithALetter" classname="com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest" time="0.03"/>
+  <system-out><![CDATA[2019-02-06 23:01:46.990  INFO 5812 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest], using SpringBootContextLoader
+2019-02-06 23:01:46.991  INFO 5812 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]: no resource found for suffixes {-context.xml, Context.groovy}.
+2019-02-06 23:01:46.991  INFO 5812 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest]: ParkingEntranceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2019-02-06 23:01:47.019  INFO 5812 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.ceiba.ceibaparking.CeibaParkingApplication for test class com.ceiba.ceibaparking.integration.ParkingEntranceIntegrationTest
+2019-02-06 23:01:47.021  INFO 5812 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2019-02-06 23:01:47.022  INFO 5812 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@3ceac500, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@91be361, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@6275af5e, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@5300f4a5, org.springframework.test.context.support.DirtiesContextTestExecutionListener@39a8e900, org.springframework.test.context.transaction.TransactionalTestExecutionListener@6ffe15bf, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@20be5841, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@74cf352f, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@ad1325f, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@159d9d57, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@47b3a3f5, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@4ad89061]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -34,34 +18,30 @@
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::        (v2.1.2.RELEASE)
 
-2019-02-06 19:46:18.264  INFO 16748 --- [    Test worker] c.c.c.i.ParkingEntranceIntegrationTest   : Starting ParkingEntranceIntegrationTest on NELSON-MEJIA with PID 16748 (started by nelson.laverde in C:\Users\nelson.laverde\git2\ceiba-parking)
-2019-02-06 19:46:18.266  INFO 16748 --- [    Test worker] c.c.c.i.ParkingEntranceIntegrationTest   : The following profiles are active: test
-2019-02-06 19:46:19.312  INFO 16748 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
-2019-02-06 19:46:19.475  INFO 16748 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 149ms. Found 2 repository interfaces.
-2019-02-06 19:46:20.299  INFO 16748 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$cbf8efa4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-02-06 19:46:20.598  INFO 16748 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-02-06 19:46:20.894  INFO 16748 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-02-06 19:46:21.008  INFO 16748 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
+2019-02-06 23:01:47.062  INFO 5812 --- [    Test worker] c.c.c.i.ParkingEntranceIntegrationTest   : Starting ParkingEntranceIntegrationTest on NELSON-MEJIA with PID 5812 (started by nelson.laverde in C:\Users\nelson.laverde\git2\ceiba-parking)
+2019-02-06 23:01:47.062  INFO 5812 --- [    Test worker] c.c.c.i.ParkingEntranceIntegrationTest   : The following profiles are active: test
+2019-02-06 23:01:47.312  INFO 5812 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
+2019-02-06 23:01:47.342  INFO 5812 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30ms. Found 2 repository interfaces.
+2019-02-06 23:01:47.444  INFO 5812 --- [    Test worker] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a1724bd1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-02-06 23:01:47.548  INFO 5812 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2019-02-06 23:01:47.549  INFO 5812 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2019-02-06 23:01:47.584  INFO 5812 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [
 	name: default
 	...]
-2019-02-06 19:46:21.121  INFO 16748 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate Core {5.3.7.Final}
-2019-02-06 19:46:21.123  INFO 16748 --- [    Test worker] org.hibernate.cfg.Environment            : HHH000206: hibernate.properties not found
-2019-02-06 19:46:21.342  INFO 16748 --- [    Test worker] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.0.4.Final}
-2019-02-06 19:46:21.611  INFO 16748 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-Hibernate: create table parking_record (id bigint not null, bill_value double not null, entry_date timestamp not null, out_date timestamp, vehicle_id bigint not null, primary key (id))
-Hibernate: create table vehicle (id bigint not null, cubic_centimeters integer, license_plate varchar(255) not null, vehicle_type varchar(255) not null, primary key (id))
-Hibernate: alter table vehicle drop constraint if exists UK_j5v3su3bdx4bvsk1t9dga4bsq
-Hibernate: alter table vehicle add constraint UK_j5v3su3bdx4bvsk1t9dga4bsq unique (license_plate)
-Hibernate: create sequence hibernate_sequence start with 1 increment by 1
-Hibernate: alter table parking_record add constraint FKr0fm1chd12hsupf3r08y2l315 foreign key (vehicle_id) references vehicle
-2019-02-06 19:46:22.847  INFO 16748 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2019-02-06 19:46:23.386  INFO 16748 --- [    Test worker] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
-2019-02-06 19:46:24.555  INFO 16748 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-02-06 19:46:24.650  WARN 16748 --- [    Test worker] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2019-02-06 19:46:25.096  INFO 16748 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2019-02-06 19:46:25.097  INFO 16748 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2019-02-06 19:46:25.113  INFO 16748 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 16 ms
-2019-02-06 19:46:25.140  INFO 16748 --- [    Test worker] c.c.c.i.ParkingEntranceIntegrationTest   : Started ParkingEntranceIntegrationTest in 7.423 seconds (JVM running for 9.493)
+2019-02-06 23:01:47.598  INFO 5812 --- [    Test worker] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2019-02-06 23:01:47.688  INFO 5812 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2019-02-06 23:01:47.850  INFO 5812 --- [    Test worker] o.h.h.i.QueryTranslatorFactoryInitiator  : HHH000397: Using ASTQueryTranslatorFactory
+2019-02-06 23:01:47.948  INFO 5812 --- [    Test worker] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 035288ce-6098-4c0d-9072-2af6f997c9d8
+
+2019-02-06 23:01:48.043  INFO 5812 --- [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@e8bed67, org.springframework.security.web.context.SecurityContextPersistenceFilter@252030c2, org.springframework.security.web.header.HeaderWriterFilter@5ac1821b, org.springframework.security.web.authentication.logout.LogoutFilter@2a897ed4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1873b7d0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4e742f9f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@b431651, org.springframework.security.web.session.SessionManagementFilter@5f1761c4, org.springframework.security.web.access.ExceptionTranslationFilter@1844a54b]
+2019-02-06 23:01:48.331  INFO 5812 --- [    Test worker] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-02-06 23:01:48.343  WARN 5812 --- [    Test worker] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2019-02-06 23:01:48.668  INFO 5812 --- [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2019-02-06 23:01:48.668  INFO 5812 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2019-02-06 23:01:48.686  INFO 5812 --- [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 18 ms
+2019-02-06 23:01:48.709  INFO 5812 --- [    Test worker] c.c.c.i.ParkingEntranceIntegrationTest   : Started ParkingEntranceIntegrationTest in 1.683 seconds (JVM running for 11.608)
 Hibernate: select vehicleent0_.id as id1_1_, vehicleent0_.cubic_centimeters as cubic_ce2_1_, vehicleent0_.license_plate as license_3_1_, vehicleent0_.vehicle_type as vehicle_4_1_ from vehicle vehicleent0_ where vehicleent0_.license_plate=?
 Hibernate: call next value for hibernate_sequence
 Hibernate: insert into vehicle (cubic_centimeters, license_plate, vehicle_type, id) values (?, ?, ?, ?)
@@ -75,7 +55,7 @@ MockHttpServletRequest:
       Request URI = /parkingRecordService/registerParkingEntrance
        Parameters = {}
           Headers = [Content-Type:"application/json;charset=UTF-8"]
-             Body = {"entryDate":1549500385215,"outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"JKL999","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}}
+             Body = {"entryDate":1549512108718,"outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"JKL999","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}}
     Session Attrs = {}
 
 Handler:
@@ -100,9 +80,9 @@ FlashMap:
 MockHttpServletResponse:
            Status = 201
     Error message = null
-          Headers = [Content-Type:"application/json;charset=UTF-8"]
+          Headers = [Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0"]
      Content type = application/json;charset=UTF-8
-             Body = {"responseCode":"00","responseMessage":"El proceso se realiz? de manera exitosa.","parkingRecordDomain":{"entryDate":"2019-02-07T00:46:25.215+0000","outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"JKL999","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}}}
+             Body = {"responseCode":"00","responseMessage":"El proceso se realiz? de manera exitosa.","parkingRecordDomain":{"entryDate":"2019-02-07T04:01:48.718+0000","outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"JKL999","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}}}
     Forwarded URL = null
    Redirected URL = null
           Cookies = []
@@ -117,7 +97,7 @@ MockHttpServletRequest:
       Request URI = /parkingRecordService/registerParkingEntrance
        Parameters = {}
           Headers = [Content-Type:"application/json;charset=UTF-8"]
-             Body = {"entryDate":1551487585652,"outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"AAA999","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}}
+             Body = {"entryDate":1551499309186,"outDate":null,"billValue":0.0,"vehicle":{"licensePlate":"AAA999","cubicCentimeters":150,"vehicleType":"MOTORBYKE"}}
     Session Attrs = {}
 
 Handler:
@@ -142,7 +122,7 @@ FlashMap:
 MockHttpServletResponse:
            Status = 500
     Error message = null
-          Headers = [Content-Type:"application/json;charset=UTF-8"]
+          Headers = [Content-Type:"application/json;charset=UTF-8", X-Content-Type-Options:"nosniff", X-XSS-Protection:"1; mode=block", Cache-Control:"no-cache, no-store, max-age=0, must-revalidate", Pragma:"no-cache", Expires:"0"]
      Content type = application/json;charset=UTF-8
              Body = {"responseCode":"01","responseMessage":"No esta autorizado para ingresar debido a que las placas que inician con la letra A solo pueden ingresar los domingos y lunes.","parkingRecordDomain":null}
     Forwarded URL = null
